@@ -17,7 +17,7 @@
   --border: rgba(255, 255, 255, 0.4);
   --border-dark: rgba(0, 0, 0, 0.05);
   --container: 1320px;
-  --section-pad: 100px;
+  --section-pad: 24px;
 }
 
 /* --- Reset & Base --- */
@@ -136,7 +136,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; outline: non
 .hero-line { display: none; }
 
 /* ============================================================ TRUST ============================================================ */
-#trust, .trust { background: transparent; padding: 0 0 80px; position: relative; z-index: 10; margin-top: -60px; }
+#trust, .trust { background: transparent; padding: 0 0 24px; position: relative; z-index: 10; margin-top: -60px; }
 .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); background: rgba(255,255,255,0.4); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid var(--border); border-radius: 24px; box-shadow: 0 8px 32px rgba(86,180,233,0.05); }
 .trust-item { text-align: center; padding: 48px 24px; position: relative; }
 .trust-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 20%; height: 60%; width: 1px; background: rgba(0,0,0,0.05); }
@@ -180,7 +180,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; outline: non
 .treat-card:hover .treat-arrow { opacity: 1; transform: translate(0, 0); background: var(--accent); }
 
 /* ============================================================ STATEMENT ============================================================ */
-#statement, .statement { background: transparent; padding: 100px 0; position: relative; overflow: hidden; text-align: center; }
+#statement, .statement { background: transparent; padding: 24px 0; position: relative; overflow: hidden; text-align: center; }
 .statement-quote { font-family: 'Outfit', sans-serif; font-size: 250px; color: rgba(86,180,233,0.1); position: absolute; top: 40px; left: 50%; transform: translateX(-50%); line-height: 1; pointer-events: none; }
 .statement-text { font-family: 'Outfit', 'Noto Sans KR', sans-serif; font-weight: 300; font-size: clamp(28px, 4vw, 56px); color: var(--text); line-height: 1.4; max-width: 900px; margin: 0 auto 48px; position: relative; z-index: 1; letter-spacing: -0.02em; }
 .statement-line { width: 80px; height: 1px; background: var(--accent); margin: 0 auto 32px; }
@@ -202,7 +202,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; outline: non
 
 /* ============================================================ REVIEWS ============================================================ */
 #reviews, .reviews { background: transparent; padding: var(--section-pad) 0; position: relative; z-index: 10; }
-.review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
+.review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px; }
 .review-card { background: rgba(255,255,255,0.4); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid var(--border); border-radius: 24px; padding: 40px 32px; transition: transform 0.3s; position: relative; }
 .review-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(86,180,233,0.06); background: rgba(255,255,255,0.6); }
 .review-stars { margin-bottom: 24px; display: flex; gap: 4px; }
@@ -211,7 +211,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; outline: non
 .review-author { font-size: 14px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 20px; }
 .review-name { font-weight: 600; font-family: 'Outfit', sans-serif; color: var(--text); }
 .review-treatment { font-size: 12px; font-family: 'Outfit', sans-serif; font-weight: 500; color: var(--accent); background: rgba(86,180,233,0.1); padding: 4px 12px; border-radius: 40px; }
-.review-aggregate { display: flex; justify-content: center; gap: 64px; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 48px; margin-top: 60px; }
+.review-aggregate { display: flex; justify-content: center; gap: 64px; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 24px; margin-top: 24px; }
 .aggregate-item { display: flex; flex-direction: column; gap: 8px; text-align: center; }
 .aggregate-label { font-size: 13px; font-weight: 500; color: var(--text-muted); }
 .aggregate-value { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 300; color: var(--accent); }
@@ -271,7 +271,7 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
 
 /* ============================================================ LOCATION ============================================================ */
 #location, .location { background: transparent; padding: var(--section-pad) 0; position: relative; z-index: 10; }
-.location-grid { display: grid; grid-template-columns: 320px 1fr 320px; gap: 40px; margin-top: 60px; }
+.location-grid { display: grid; grid-template-columns: 320px 1fr 320px; gap: 40px; margin-top: 24px; }
 .location-contact { display: flex; flex-direction: column; gap: 24px; background: rgba(255,255,255,0.4); backdrop-filter: blur(24px); border: 1px solid var(--border); border-radius: 24px; padding: 40px; }
 .location-info-item { display: flex; gap: 16px; padding: 0; border: none; }
 .location-info-item i { font-size: 24px; color: var(--accent); margin-top: 2px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: rgba(86,180,233,0.1); border-radius: 50%; flex-shrink: 0; }
@@ -293,7 +293,7 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
 
 /* ============================================================ FOOTER ============================================================ */
 .main-footer { background: #fff; padding: 60px 0 40px; color: var(--text-muted); border-top: 1px solid var(--border); position: relative; z-index: 10; }
-.footer-top { margin-bottom: 80px; }
+.footer-top { margin-bottom: 32px; }
 .footer-logo { margin-bottom: 40px; }
 .footer-logo img { height: 40px; width: auto; filter: invert(0); }
 .footer-columns { display: grid; grid-template-columns: repeat(5, 1fr); gap: 48px; }
@@ -365,7 +365,7 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
 
 /* ============================================================ RESPONSIVE 1024px ============================================================ */
 @media (max-width: 1024px) {
-  :root { --section-pad: 72px; }
+  :root { --section-pad: 16px; }
   .container { padding: 0 32px; }
   .header-nav { display: none; }
   .hamburger { display: flex; }
@@ -390,7 +390,7 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
 
 /* ============================================================ RESPONSIVE 768px ============================================================ */
 @media (max-width: 768px) {
-  :root { --section-pad: 56px; }
+  :root { --section-pad: 12px; }
   .container { padding: 0 20px; }
   #main-header, .main-header { padding: 0 20px; }
 
@@ -447,7 +447,7 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
 
   /* Statement */
   .statement-quote { font-size: 150px; }
-  #statement, .statement { padding: 72px 0; }
+  #statement, .statement { padding: 12px 0; }
 
   .mega-menu { display: none; }
   .name-display { font-size: 40px; }
@@ -460,7 +460,7 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
 
 /* ============================================================ RESPONSIVE 480px ============================================================ */
 @media (max-width: 480px) {
-  :root { --section-pad: 48px; }
+  :root { --section-pad: 8px; }
   .hero-heading { font-size: 44px; }
 
   /* Trust */
