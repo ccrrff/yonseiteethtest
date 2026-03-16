@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연세바른치과 — YONSEI BARUN DENTAL CLINIC</title>
+  <meta name="description" content="연세바른치과 — 바른 진료, 바른 치과. 보철 전문의 직접 진료, 20년 경력의 신뢰할 수 있는 치과.">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Noto+Sans+KR:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Remixicon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ========== BACKGROUND BLOBS ========== -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <!-- ========== HEADER ========== -->
+  <header id="main-header" class="main-header">
+    <div class="header-inner">
+      <a href="#hero" class="header-logo" aria-label="연세바른치과 홈">
+        <img src="assets/images/logo_dental_1773581976109.png" alt="연세바른치과 로고" width="140" height="40">
+      </a>
+
+      <nav class="header-nav" aria-label="주요 메뉴">
+        <ul class="nav-list">
+          <li class="nav-item" data-menu="about"><a href="#about">연세바른치과</a></li>
+          <li class="nav-item" data-menu="implant"><a href="#treatments">임플란트</a></li>
+          <li class="nav-item" data-menu="general"><a href="#treatments">일반치료</a></li>
+          <li class="nav-item" data-menu="cosmetic"><a href="#treatments">심미치료</a></li>
+          <li class="nav-item" data-menu="community"><a href="#reviews">커뮤니티</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta-wrap">
+        <a href="tel:025745143" class="btn btn-primary header-cta">상담 예약</a>
+        <div class="header-cta-dropdown">
+          <a href="#" class="cta-drop-item cta-kakao"><i class="ri-kakao-talk-fill"></i> 카카오톡</a>
+          <a href="#" class="cta-drop-item cta-naver"><i class="ri-naver-fill"></i> 네이버</a>
+          <a href="tel:025745143" class="cta-drop-item cta-phone"><i class="ri-phone-line"></i> 전화</a>
+        </div>
+      </div>
+
+      <button id="hamburger" class="hamburger" aria-label="메뉴 열기" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========== MEGA MENU ========== -->
+  <div id="mega-menu" class="mega-menu" aria-hidden="true">
+    <button class="mega-close" aria-label="메뉴 닫기"><i class="ri-close-line"></i></button>
+    <div class="mega-inner">
+      <div class="mega-categories">
+        <button class="mega-cat active" data-cat="about"><span class="mega-cat-num">01</span>연세바른치과</button>
+        <button class="mega-cat" data-cat="implant"><span class="mega-cat-num">02</span>임플란트</button>
+        <button class="mega-cat" data-cat="general"><span class="mega-cat-num">03</span>일반치료</button>
+        <button class="mega-cat" data-cat="cosmetic"><span class="mega-cat-num">04</span>심미치료</button>
+        <button class="mega-cat" data-cat="community"><span class="mega-cat-num">05</span>커뮤니티</button>
+      </div>
+
+      <div class="mega-details">
+        <div class="mega-panel active" data-panel="about">
+          <ul class="mega-links">
+            <li><a href="#about">인사말</a></li>
+            <li><a href="#doctor">의료진 소개</a></li>
+            <li><a href="#location">오시는 길</a></li>
+          </ul>
+          <div class="mega-preview">
+            <img src="assets/images/clinic_interior_1773580981909.png" alt="클리닉 내부" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="mega-panel" data-panel="implant">
+          <ul class="mega-links">
+            <li><a href="#treatments">CT 네비게이션 임플란트</a></li>
+            <li><a href="#treatments">전악 임플란트</a></li>
+            <li><a href="#treatments">뼈이식 임플란트</a></li>
+          </ul>
+          <div class="mega-preview">
+            <img src="assets/images/implant_treatment_1773580947934.png" alt="임플란트 치료" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="mega-panel" data-panel="general">
+          <ul class="mega-links">
+            <li><a href="#treatments">미세현미경 신경치료</a></li>
+            <li><a href="#treatments">충치치료</a></li>
+            <li><a href="#treatments">사랑니 발치</a></li>
+          </ul>
+          <div class="mega-preview">
+            <img src="assets/images/treatment_general_1773582011690.png" alt="일반치료" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="mega-panel" data-panel="cosmetic">
+          <ul class="mega-links">
+            <li><a href="#treatments">올세라믹</a></li>
+            <li><a href="#treatments">라미네이트</a></li>
+            <li><a href="#treatments">치아미백</a></li>
+          </ul>
+          <div class="mega-preview">
+            <img src="assets/images/treatment_aesthetic_1773582029060.png" alt="심미치료" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="mega-panel" data-panel="community">
+          <ul class="mega-links">
+            <li><a href="#reviews">환자 후기</a></li>
+            <li><a href="#faq">자주 묻는 질문</a></li>
+            <li><a href="#consultation">상담 신청</a></li>
+          </ul>
+          <div class="mega-preview">
+            <img src="assets/images/microscope_treatment_1773580966667.png" alt="미세현미경 치료" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <nav class="mobile-menu-inner">
+      <a href="#about" class="mobile-link">연세바른치과</a>
+      <a href="#treatments" class="mobile-link">임플란트</a>
+      <a href="#treatments" class="mobile-link">일반치료</a>
+      <a href="#treatments" class="mobile-link">심미치료</a>
+      <a href="#reviews" class="mobile-link">커뮤니티</a>
+      <a href="#consultation" class="mobile-link mobile-cta">상담 신청</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ========== SECTION 1: HERO ========== -->
+    <section id="hero" class="section hero">
+      <div class="hero-bg">
+        <img src="assets/images/clinic_interior_1773580981909.png" alt="연세바른치과 내부" loading="eager">
+        <div class="hero-blur-overlay"></div>
+      </div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="hero-eyebrow" data-animate="fade-up">YONSEI BARUN DENTAL CLINIC</p>
+          <h1 class="hero-heading" data-animate="fade-up" data-delay="0.1">
+            <span><span class="hero-accent">바른</span> 진료,</span>
+            <span><span class="hero-accent">바른</span> 치과.</span>
+          </h1>
+          <p class="hero-subtitle" data-animate="fade-up" data-delay="0.2">환자의 입장에서 생각하고, 정직하게 진료합니다.<br>보철 전문의가 처음부터 끝까지 직접 진료하는 치과.</p>
+          <div class="hero-cta-row" data-animate="fade-up" data-delay="0.3">
+            <a href="#consultation" class="btn btn-primary">상담 예약</a>
+            <a href="tel:025745143" class="hero-phone">02) 574.5143</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 2: TRUST METRICS ========== -->
+    <section id="trust" class="section trust">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item glass-panel" data-animate="fade-up">
+            <span class="trust-num" data-target="20">0</span>
+            <span class="trust-unit">년+</span>
+            <span class="trust-label">진료 경력</span>
+          </div>
+          <div class="trust-item glass-panel" data-animate="fade-up" data-delay="0.1">
+            <span class="trust-num" data-target="10000">0</span>
+            <span class="trust-unit">건+</span>
+            <span class="trust-label">누적 진료</span>
+          </div>
+          <div class="trust-item glass-panel" data-animate="fade-up" data-delay="0.2">
+            <span class="trust-num" data-target="4.9" data-decimal>0</span>
+            <span class="trust-unit">/5.0</span>
+            <span class="trust-label">네이버 리뷰</span>
+          </div>
+          <div class="trust-item glass-panel" data-animate="fade-up" data-delay="0.3">
+            <i class="ri-stethoscope-line trust-icon"></i>
+            <span class="trust-label">보철 전문의 직접 진료</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 3: ABOUT ========== -->
+    <section id="about" class="section about">
+      <div class="container">
+        <div class="section-label" data-animate="fade-up">ABOUT</div>
+        <h2 class="section-title" data-animate="fade-up" data-delay="0.1">환자 중심의 바른 진료를 약속합니다</h2>
+
+        <div class="about-grid">
+          <div class="about-left" data-animate="fade-up" data-delay="0.2">
+            <div class="about-image-wrap glass-panel">
+              <img src="assets/images/clinic_interior_1773580981909.png" alt="연세바른치과 내부" loading="lazy" decoding="async" width="640" height="480">
+              <div class="about-stats glass">
+                <div class="about-stat">
+                  <span class="about-stat-num">20년+</span>
+                  <span class="about-stat-label">한 자리 진료</span>
+                </div>
+                <div class="about-stat">
+                  <span class="about-stat-num">15년+</span>
+                  <span class="about-stat-label">임플란트 경력</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-right">
+            <div class="about-pillar" data-animate="fade-up" data-delay="0.2">
+              <span class="pillar-num">01</span>
+              <h3 class="pillar-title">충분한 설명</h3>
+              <p class="pillar-desc">구강카메라와 영상자료를 활용해 눈으로 직접 확인하며 치료 과정을 설명드립니다. 이해가 될 때까지 충분히 안내합니다.</p>
+            </div>
+            <div class="about-pillar" data-animate="fade-up" data-delay="0.3">
+              <span class="pillar-num">02</span>
+              <h3 class="pillar-title">정직한 진료</h3>
+              <p class="pillar-desc">불필요한 치료를 권유하지 않습니다. 꼭 필요한 치료만 정직하게 안내하고, 환자분이 납득할 수 있는 진료를 합니다.</p>
+            </div>
+            <div class="about-pillar" data-animate="fade-up" data-delay="0.4">
+              <span class="pillar-num">03</span>
+              <h3 class="pillar-title">끝까지 책임</h3>
+              <p class="pillar-desc">치료 후에도 정기검진과 사후관리를 통해 끝까지 책임집니다. 한 번 인연을 맺은 환자분은 평생 주치의로 함께합니다.</p>
+            </div>
+            <a href="#doctor" class="btn btn-outline" data-animate="fade-up" data-delay="0.5">의료진 소개</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 4: TREATMENTS ========== -->
+    <section id="treatments" class="section treatments">
+      <div class="container">
+        <div class="treatments-panel glass-panel" data-animate="fade-up">
+          <div class="treatments-header">
+            <div class="section-label">TREATMENTS</div>
+            <h2 class="section-title">어떤 고민이 있으신가요?</h2>
+          </div>
+
+          <div class="treat-grid">
+            <a href="#consultation" class="treat-card" data-animate="fade-up" data-delay="0.05">
+              <div class="treat-img">
+                <img src="assets/images/implant_treatment_1773580947934.png" alt="임플란트 치료" loading="lazy" decoding="async">
+              </div>
+              <div class="treat-overlay">
+                <span class="treat-tag">치아가 빠졌어요</span>
+                <h3>임플란트</h3>
+                <span class="treat-arrow"><i class="ri-arrow-right-up-line"></i></span>
+              </div>
+            </a>
+
+            <a href="#consultation" class="treat-card" data-animate="fade-up" data-delay="0.1">
+              <div class="treat-img">
+                <img src="assets/images/treatment_general_1773582011690.png" alt="일반치료" loading="lazy" decoding="async">
+              </div>
+              <div class="treat-overlay">
+                <span class="treat-tag">치아가 아파요</span>
+                <h3>일반치료</h3>
+                <span class="treat-arrow"><i class="ri-arrow-right-up-line"></i></span>
+              </div>
+            </a>
+
+            <a href="#consultation" class="treat-card" data-animate="fade-up" data-delay="0.15">
+              <div class="treat-img">
+                <img src="assets/images/treatment_aesthetic_1773582029060.png" alt="심미치료" loading="lazy" decoding="async">
+              </div>
+              <div class="treat-overlay">
+                <span class="treat-tag">치아가 예쁘지 않아요</span>
+                <h3>심미치료</h3>
+                <span class="treat-arrow"><i class="ri-arrow-right-up-line"></i></span>
+              </div>
+            </a>
+
+            <a href="#consultation" class="treat-card" data-animate="fade-up" data-delay="0.2">
+              <div class="treat-img">
+                <img src="assets/images/treatment_prosthodontics_1773581993153.png" alt="보철치료" loading="lazy" decoding="async">
+              </div>
+              <div class="treat-overlay">
+                <span class="treat-tag">보철이 불편해요</span>
+                <h3>보철치료</h3>
+                <span class="treat-arrow"><i class="ri-arrow-right-up-line"></i></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 5: STATEMENT ========== -->
+    <section id="statement" class="section statement">
+      <div class="container">
+        <span class="statement-quote" aria-hidden="true">&ldquo;</span>
+        <p class="statement-text" data-animate="fade-up">임플란트는 단순한 식립이 아닌,<br>환자를 위한 <strong>맞춤 진료</strong>가 중요합니다.</p>
+        <div class="statement-line" data-animate="fade-up" data-delay="0.1"></div>
+        <a href="#consultation" class="btn btn-primary" data-animate="fade-up" data-delay="0.2">상담 예약하기</a>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 6: DOCTOR ========== -->
+    <section id="doctor" class="section doctor">
+      <div class="doctor-inner">
+        <div class="doctor-image" data-animate="fade-up">
+          <img src="assets/images/hero_dentist_1773580930263.png" alt="대표원장 이영석" loading="lazy" decoding="async" width="720" height="900">
+        </div>
+        <div class="doctor-content">
+          <div class="section-label" data-animate="fade-up">DOCTOR</div>
+          <p class="doctor-role" data-animate="fade-up" data-delay="0.1">대표원장</p>
+          <h2 class="name-display" data-animate="fade-up" data-delay="0.15">이영석</h2>
+          <p class="doctor-quote" data-animate="fade-up" data-delay="0.2"><em>"환자 한 분 한 분을 가족처럼 생각하며, 정직하고 바른 진료를 약속드립니다."</em></p>
+          <ul class="doctor-credentials" data-animate="fade-up" data-delay="0.3">
+            <li><i class="ri-graduation-cap-line"></i>연세대학교 치과대학 졸업</li>
+            <li><i class="ri-hospital-line"></i>연세대학교 치과대학병원 수련</li>
+            <li><i class="ri-award-line"></i>보건복지부 인증 보철과 전문의</li>
+            <li><i class="ri-stethoscope-line"></i>대한치과보철학회 정회원</li>
+            <li><i class="ri-bookmark-line"></i>대한구강악안면임플란트학회 정회원</li>
+            <li><i class="ri-microscope-line"></i>미세현미경 근관치료 수료</li>
+            <li><i class="ri-service-line"></i>Osstem Implant Master Course 수료</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 7: REVIEWS ========== -->
+    <section id="reviews" class="section reviews">
+      <div class="container">
+        <div class="section-label" data-animate="fade-up">REVIEWS</div>
+        <h2 class="section-title" data-animate="fade-up" data-delay="0.1">환자분들의 솔직한 이야기</h2>
+
+        <div class="review-grid">
+          <div class="review-card glass-panel" data-animate="fade-up" data-delay="0.1">
+            <div class="review-stars">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </div>
+            <p class="review-text">"임플란트 2개 했는데, 처음부터 끝까지 원장님이 직접 해주셔서 정말 믿음이 갔어요. 설명도 꼼꼼하시고, 수술 후 통증도 거의 없었습니다. 주변에 적극 추천합니다."</p>
+            <div class="review-author">
+              <span class="review-name">김OO님</span>
+              <span class="review-treatment glass">임플란트 2본</span>
+            </div>
+          </div>
+
+          <div class="review-card glass-panel" data-animate="fade-up" data-delay="0.2">
+            <div class="review-stars">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </div>
+            <p class="review-text">"다른 치과에서 신경치료 해야 한다고 했는데, 여기선 충치치료만으로 해결해주셨어요. 불필요한 치료 안 하시는 게 느껴져서 신뢰가 갑니다. 아이들도 데리고 오고 있어요."</p>
+            <div class="review-author">
+              <span class="review-name">박OO님</span>
+              <span class="review-treatment glass">충치치료</span>
+            </div>
+          </div>
+
+          <div class="review-card glass-panel" data-animate="fade-up" data-delay="0.3">
+            <div class="review-stars">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </div>
+            <p class="review-text">"다른 곳에서 한 보철이 계속 불편했는데, 여기서 다시 하고 나서 완전히 달라졌어요. 보철 전문의라 그런지 핏이 정말 다릅니다. 이제 편하게 식사할 수 있어요."</p>
+            <div class="review-author">
+              <span class="review-name">이OO님</span>
+              <span class="review-treatment glass">보철 재치료</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-aggregate" data-animate="fade-up" data-delay="0.4">
+          <div class="aggregate-item">
+            <span class="aggregate-label">네이버 평점</span>
+            <span class="aggregate-value">4.9/5.0</span>
+          </div>
+          <div class="aggregate-item">
+            <span class="aggregate-label">"친절하다"</span>
+            <span class="aggregate-value">87회</span>
+          </div>
+          <div class="aggregate-item">
+            <span class="aggregate-label">"설명이 자세하다"</span>
+            <span class="aggregate-value">64회</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 8: FAQ ========== -->
+    <section id="faq" class="section faq">
+      <div class="container">
+        <div class="faq-layout">
+          <div class="faq-header" data-animate="fade-up">
+            <div class="section-label">FAQ</div>
+            <h2 class="section-title">자주 묻는 질문</h2>
+            <p class="faq-description">진료 전 궁금하신 점을 확인하세요.<br>더 자세한 상담은 전화 또는 온라인으로 문의해주세요.</p>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item" data-animate="fade-up" data-delay="0.1">
+              <button class="faq-question" aria-expanded="false">
+                <span>임플란트 수술이 많이 아픈가요?</span>
+                <i class="ri-add-line faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>국소마취 후 진행하기 때문에 수술 중 통증은 거의 없습니다. 수술 후에도 처방된 진통제로 충분히 관리 가능하며, 대부분의 환자분들이 "생각보다 안 아팠다"고 말씀하십니다. CT 네비게이션을 활용한 정밀 식립으로 조직 손상을 최소화합니다.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item" data-animate="fade-up" data-delay="0.15">
+              <button class="faq-question" aria-expanded="false">
+                <span>임플란트 비용은 얼마인가요?</span>
+                <i class="ri-add-line faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>임플란트 비용은 잔존 뼈의 상태, 사용하는 재료, 추가 시술(뼈이식 등) 여부에 따라 달라집니다. 정확한 비용은 CT 촬영 후 상담을 통해 안내드리며, 불필요한 추가 비용 없이 투명하게 안내해드립니다.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item" data-animate="fade-up" data-delay="0.2">
+              <button class="faq-question" aria-expanded="false">
+                <span>뼈가 부족해도 임플란트가 가능한가요?</span>
+                <i class="ri-add-line faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>네, 가능합니다. 뼈이식술(GBR)을 통해 부족한 뼈를 보충한 후 임플란트를 진행할 수 있습니다. 다른 병원에서 어렵다고 진단받으신 경우에도 정밀 검사 후 최적의 치료 방법을 찾아드립니다.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item" data-animate="fade-up" data-delay="0.25">
+              <button class="faq-question" aria-expanded="false">
+                <span>신경치료는 왜 여러 번 내원해야 하나요?</span>
+                <i class="ri-add-line faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>신경치료는 치아 내부의 감염된 신경을 제거하고 소독하는 과정입니다. 완전한 소독과 충전을 위해 2~3회 내원이 필요하며, 미세현미경을 활용하여 육안으로 보이지 않는 미세한 신경관까지 정밀하게 치료합니다.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item" data-animate="fade-up" data-delay="0.3">
+              <button class="faq-question" aria-expanded="false">
+                <span>주차는 가능한가요?</span>
+                <i class="ri-add-line faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>건물 내 주차장을 이용하실 수 있으며, 진료 시간 동안 무료 주차가 가능합니다. 주차 공간이 부족할 경우 인근 공영주차장도 이용 가능하오니, 내원 시 안내데스크에 문의해주세요.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 9: CONSULTATION ========== -->
+    <section id="consultation" class="section consultation">
+      <div class="consultation-inner glass-panel">
+        <div class="consultation-info">
+          <div class="consultation-overlay-content">
+            <h2 data-animate="fade-up">편하게 상담하세요</h2>
+            <p data-animate="fade-up" data-delay="0.1">부담 없이 궁금한 점을 문의해주세요.<br>친절하게 안내해드립니다.</p>
+            <a href="tel:025745143" class="consultation-phone" data-animate="fade-up" data-delay="0.2">
+              <i class="ri-phone-line"></i> 02-574-5143
+            </a>
+            <div class="consultation-channels" data-animate="fade-up" data-delay="0.3">
+              <a href="#" class="channel-btn channel-kakao" aria-label="카카오톡 상담"><i class="ri-kakao-talk-fill"></i> 카카오톡</a>
+              <a href="#" class="channel-btn channel-naver" aria-label="네이버 예약"><i class="ri-naver-fill"></i> 네이버</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="consultation-form-wrap glass">
+          <form id="consultation-form" class="consultation-form" data-animate="fade-up">
+            <h3 class="form-title">온라인 상담 신청</h3>
+
+            <div class="form-group">
+              <label for="cf-name">이름 <span class="required">*</span></label>
+              <input type="text" id="cf-name" name="name" placeholder="홍길동" required autocomplete="name">
+            </div>
+
+            <div class="form-group">
+              <label for="cf-phone">연락처 <span class="required">*</span></label>
+              <input type="tel" id="cf-phone" name="phone" placeholder="010-0000-0000" required autocomplete="tel">
+            </div>
+
+            <div class="form-group">
+              <label for="cf-date">희망 날짜</label>
+              <input type="date" id="cf-date" name="date">
+            </div>
+
+            <fieldset class="form-group form-radio-group">
+              <legend>관심 진료 <span class="required">*</span></legend>
+              <div class="radio-options">
+                <label class="radio-label glass">
+                  <input type="radio" name="treatment" value="임플란트" required> 임플란트
+                </label>
+                <label class="radio-label glass">
+                  <input type="radio" name="treatment" value="일반치료"> 일반치료
+                </label>
+                <label class="radio-label glass">
+                  <input type="radio" name="treatment" value="심미치료"> 심미치료
+                </label>
+                <label class="radio-label glass">
+                  <input type="radio" name="treatment" value="보철치료"> 보철치료
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="form-group">
+              <label for="cf-content">상담 내용</label>
+              <textarea id="cf-content" name="content" rows="4" placeholder="궁금하신 내용을 자유롭게 작성해주세요."></textarea>
+            </div>
+
+            <div class="form-group form-checkbox">
+              <label class="checkbox-label">
+                <input type="checkbox" id="cf-agree" name="agree" required>
+                <span>개인정보 수집 및 이용에 동의합니다. <span class="required">*</span></span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-submit">
+              <span class="btn-text">상담 신청하기</span>
+              <span class="btn-spinner" aria-hidden="true"></span>
+              <span class="btn-check" aria-hidden="true"><i class="ri-check-line"></i></span>
+            </button>
+
+            <p class="form-note">작성해주신 정보는 상담 목적으로만 사용되며, 상담 완료 후 즉시 파기됩니다.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 10: LOCATION ========== -->
+    <section id="location" class="section location">
+      <div class="container">
+        <div class="section-label" data-animate="fade-up">LOCATION</div>
+        <h2 class="section-title" data-animate="fade-up" data-delay="0.1">오시는 길</h2>
+
+        <div class="location-grid">
+          <div class="location-contact glass-panel" data-animate="fade-up" data-delay="0.2">
+            <div class="location-info-item">
+              <i class="ri-phone-line"></i>
+              <div>
+                <strong>전화</strong>
+                <a href="tel:025745143">02-574-5143</a>
+              </div>
+            </div>
+            <div class="location-info-item">
+              <i class="ri-map-pin-line"></i>
+              <div>
+                <strong>주소</strong>
+                <p>서울특별시 서초구 강남대로 375</p>
+              </div>
+            </div>
+            <div class="location-social">
+              <a href="#" class="glass" aria-label="카카오톡"><i class="ri-kakao-talk-fill"></i></a>
+              <a href="#" class="glass" aria-label="네이버 블로그"><i class="ri-naver-fill"></i></a>
+              <a href="#" class="glass" aria-label="인스타그램"><i class="ri-instagram-line"></i></a>
+            </div>
+          </div>
+
+          <div class="location-map glass-panel" data-animate="fade-up" data-delay="0.3">
+            <img src="assets/images/map_placeholder_1773582060552.png" alt="연세바른치과 위치 지도" loading="lazy" decoding="async" width="600" height="400">
+          </div>
+
+          <div class="location-hours glass-panel" data-animate="fade-up" data-delay="0.4">
+            <h3>진료 시간</h3>
+            <table class="hours-table">
+              <tbody>
+                <tr>
+                  <td>월 · 화 · 수 · 금</td>
+                  <td>09:30 – 18:30</td>
+                </tr>
+                <tr>
+                  <td>토요일</td>
+                  <td>09:30 – 14:00</td>
+                </tr>
+                <tr>
+                  <td>점심시간</td>
+                  <td>13:00 – 14:00</td>
+                </tr>
+                <tr class="hours-closed">
+                  <td>목요일 · 공휴일</td>
+                  <td>휴진</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <img src="assets/images/logo_dental_1773581976109.png" alt="연세바른치과" width="120" height="36" loading="lazy" decoding="async">
+        </div>
+
+        <div class="footer-columns">
+          <div class="footer-col">
+            <h4>연세바른치과</h4>
+            <ul>
+              <li><a href="#about">인사말</a></li>
+              <li><a href="#doctor">의료진 소개</a></li>
+              <li><a href="#location">오시는 길</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>임플란트</h4>
+            <ul>
+              <li><a href="#treatments">CT 네비게이션 임플란트</a></li>
+              <li><a href="#treatments">전악 임플란트</a></li>
+              <li><a href="#treatments">뼈이식 임플란트</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>일반치료</h4>
+            <ul>
+              <li><a href="#treatments">미세현미경 신경치료</a></li>
+              <li><a href="#treatments">충치치료</a></li>
+              <li><a href="#treatments">사랑니 발치</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>심미치료</h4>
+            <ul>
+              <li><a href="#treatments">올세라믹</a></li>
+              <li><a href="#treatments">라미네이트</a></li>
+              <li><a href="#treatments">치아미백</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>커뮤니티</h4>
+            <ul>
+              <li><a href="#reviews">환자 후기</a></li>
+              <li><a href="#faq">자주 묻는 질문</a></li>
+              <li><a href="#consultation">상담 신청</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="#">개인정보처리방침</a>
+          <a href="#">이용약관</a>
+        </div>
+        <p class="footer-copyright">&copy; 2026 연세바른치과. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== FAB (Desktop) ========== -->
+  <div id="fab-cluster" class="fab-cluster">
+    <button class="fab-main" aria-label="빠른 문의">
+      <i class="ri-phone-line fab-icon-open"></i>
+      <i class="ri-close-line fab-icon-close"></i>
+    </button>
+    <a href="#" class="fab-sub" data-tooltip="카카오톡 상담" aria-label="카카오톡 상담">
+      <i class="ri-kakao-talk-fill"></i>
+    </a>
+    <a href="#" class="fab-sub" data-tooltip="네이버 예약" aria-label="네이버 예약">
+      <i class="ri-naver-fill"></i>
+    </a>
+    <a href="tel:025745143" class="fab-sub" data-tooltip="전화 문의" aria-label="전화 문의">
+      <i class="ri-phone-line"></i>
+    </a>
+  </div>
+
+  <!-- ========== MOBILE BOTTOM BAR ========== -->
+  <div id="mobile-bottom-bar" class="mobile-bottom-bar">
+    <a href="tel:025745143" class="mobile-bar-btn">
+      <i class="ri-phone-line"></i>
+      <span>전화</span>
+    </a>
+    <a href="#" class="mobile-bar-btn">
+      <i class="ri-kakao-talk-fill"></i>
+      <span>카톡상담</span>
+    </a>
+    <a href="#consultation" class="mobile-bar-btn">
+      <i class="ri-file-text-line"></i>
+      <span>상담신청</span>
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
