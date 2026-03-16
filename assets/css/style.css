@@ -149,7 +149,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; outline: non
 #about, .about { background: transparent; padding: var(--section-pad) 0; position: relative; z-index: 10; }
 .about-grid { display: grid; grid-template-columns: 50% 50%; gap: 80px; align-items: start; }
 .about-left { position: relative; }
-.about-image-wrap { position: relative; }
+.about-image-wrap { position: relative; overflow: visible; }
 .about-image-wrap img { width: 100%; height: 500px; object-fit: cover; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 24px 48px rgba(0,0,0,0.06); }
 .about-stats { position: absolute; bottom: -40px; right: -40px; background: rgba(255,255,255,0.6); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid var(--border); padding: 32px 48px; border-radius: 24px; box-shadow: 0 16px 40px rgba(86,180,233,0.08); display: flex; gap: 40px; }
 .about-stat { text-align: center; }
@@ -222,7 +222,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; outline: non
 .faq-description { font-size: 15px; font-weight: 300; color: var(--text-muted); line-height: 1.8; margin-top: 20px; }
 .faq-list { border-top: 1px solid rgba(0,0,0,0.05); }
 .faq-item { border-bottom: 1px solid rgba(0,0,0,0.05); }
-.faq-question { width: 100%; padding: 32px 0; display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 500; color: var(--text); text-align: left; cursor: pointer; transition: color 0.2s; }
+.faq-question { width: 100%; padding: 32px 0; display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 500; color: var(--text); text-align: left; cursor: pointer; transition: color 0.2s; min-height: 44px; }
 .faq-question:hover { color: var(--accent); }
 .faq-icon { font-size: 24px; transition: transform 0.35s; flex-shrink: 0; margin-left: 16px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: rgba(86,180,233,0.05); border-radius: 50%; color: var(--accent); }
 .faq-item.active .faq-icon { transform: rotate(45deg); background: var(--accent); color: #fff; }
@@ -370,8 +370,7 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
   .header-nav { display: none; }
   .hamburger { display: flex; }
   .header-cta-wrap { display: none; }
-  .header-inner { top: -12px; position: relative; justify-content: center; }
-  .main-header.scrolled .header-inner { top: 0; }
+  .header-inner { position: relative; justify-content: center; height: 60px; }
   .header-logo { position: absolute; left: 50%; transform: translateX(-50%); }
   .hamburger { position: absolute; right: 0; }
   .hero-inner { display: flex; }
@@ -394,42 +393,116 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
   :root { --section-pad: 56px; }
   .container { padding: 0 20px; }
   #main-header, .main-header { padding: 0 20px; }
+
+  /* Trust: 2x2 grid — hide dividers on right-edge (even) items */
   .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
-  .trust-item:nth-child(2)::after { display: none; }
+  .trust-item:nth-child(even)::after { display: none; }
   .trust-num { font-size: 48px; }
+  .trust-item { padding: 32px 16px; }
+
+  /* About: prevent stats overlay from overflowing parent */
+  .about-stats { right: 0; bottom: -24px; padding: 24px 32px; }
+  .about-image-wrap { margin-bottom: 40px; }
+
+  /* Treatments */
   .treat-grid { grid-template-columns: 1fr 1fr; }
   .treat-card { aspect-ratio: 4 / 5; }
   .treatments-panel { padding: 24px; border-radius: 24px; }
   .treatments-header { margin-bottom: 24px; }
+
+  /* Doctor: reduce image height */
+  .doctor-image img { height: 360px; }
+
+  /* Reviews */
   .review-grid { grid-template-columns: 1fr; }
+  .review-aggregate { gap: 32px; flex-wrap: wrap; }
+
+  /* FAQ */
   .faq-layout { grid-template-columns: 1fr; gap: 40px; }
+  .faq-question { padding: 20px 0; font-size: 16px; }
+
+  /* Consultation: stack to 1 column */
   .consultation-inner { grid-template-columns: 1fr; }
-  .consultation-info { min-height: 400px; padding: 40px 20px; }
-  .consultation-form-wrap { padding: 60px 20px; }
+  .consultation-info { min-height: auto; padding: 40px 24px; }
+  .consultation-form-wrap { padding: 40px 24px; }
+
+  /* Location: 1 column, reduce map height */
   .location-grid { grid-template-columns: 1fr; }
+  .location-map { height: 300px; }
+
+  /* Footer */
   .footer-columns { grid-template-columns: repeat(2, 1fr); gap: 32px; }
   .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-top { margin-bottom: 48px; }
+
+  /* FAB / Mobile bottom bar */
   #fab-cluster, .fab-cluster { display: none; }
   .mobile-bottom-bar { display: flex; }
+
+  /* Bottom padding so mobile bar doesn't cover footer content */
+  .main-footer { padding-bottom: 100px; }
+
+  /* Form */
+  .radio-label { min-height: 44px; padding: 12px 16px; }
+
+  /* Statement */
   .statement-quote { font-size: 150px; }
   #statement, .statement { padding: 72px 0; }
+
   .mega-menu { display: none; }
   .name-display { font-size: 40px; }
+
+  /* Prevent blobs from causing horizontal overflow */
+  .blob { opacity: 0.3; }
+  .blob-1 { left: -200px; width: 400px; height: 400px; }
+  .blob-2 { right: -300px; width: 500px; height: 500px; }
 }
 
 /* ============================================================ RESPONSIVE 480px ============================================================ */
 @media (max-width: 480px) {
   :root { --section-pad: 48px; }
   .hero-heading { font-size: 44px; }
+
+  /* Trust */
   .trust-num { font-size: 40px; }
   .trust-unit { font-size: 18px; }
-  .about-stats { padding: 24px; gap: 24px; right: 0; bottom: -60px; width: calc(100% - 40px); margin: 0 20px; justify-content: center; }
+  .trust-item { padding: 24px 12px; }
+
+  /* About: stats full width inside parent */
+  .about-stats { padding: 20px; gap: 20px; right: 0; left: 0; bottom: -40px; width: auto; margin: 0; justify-content: center; }
+  .about-stat-num { font-size: 32px; }
+  .about-image-wrap { margin-bottom: 56px; }
+
+  /* Treatments: single column on small screens */
+  .treat-grid { grid-template-columns: 1fr; }
+  .treat-card { aspect-ratio: 3 / 2; }
+
+  /* Doctor: further reduce image height */
+  .doctor-image img { height: 280px; }
+
+  /* Consultation */
   .consultation-phone { font-size: 32px; flex-direction: column; align-items: flex-start; gap: 4px; }
-  .form-row { grid-template-columns: 1fr; }
-  .footer-columns { grid-template-columns: 1fr; }
   .consultation-channels { flex-direction: column; }
+  .consultation-info { padding: 32px 20px; }
+  .consultation-form-wrap { padding: 32px 20px; }
+
+  /* Location */
+  .location-map { height: 240px; }
+  .location-contact { padding: 28px; }
+  .location-hours { padding: 28px; }
+  .hours-table td { font-size: 14px; padding: 12px 0; }
+
+  /* Footer: single column */
+  .footer-columns { grid-template-columns: 1fr; }
+  .footer-top { margin-bottom: 32px; }
+
+  .form-row { grid-template-columns: 1fr; }
   .section-header { flex-direction: column; align-items: flex-start; gap: 16px; }
   .statement-quote { font-size: 100px; }
+
+  /* Review aggregate */
+  .review-aggregate { gap: 24px; }
+  .aggregate-value { font-size: 28px; }
 }
 
 /* ============================================================ UTILITY ============================================================ */

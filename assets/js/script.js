@@ -118,7 +118,26 @@
 
         hamburger.addEventListener('click', toggleMenu);
         $$('.mobile-link', mobileMenu).forEach(link => {
-            link.addEventListener('click', closeMenu);
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href && href !== '#') {
+                    e.preventDefault();
+                    closeMenu();
+                    const target = $(href);
+                    if (target) {
+                        requestAnimationFrame(() => {
+                            const header = $('#main-header');
+                            const offset = header ? header.getBoundingClientRect().bottom + 16 : 0;
+                            window.scrollTo({
+                                top: target.getBoundingClientRect().top + window.scrollY - offset,
+                                behavior: 'smooth'
+                            });
+                        });
+                    }
+                } else {
+                    closeMenu();
+                }
+            });
         });
     }
 
@@ -309,10 +328,10 @@
 
                 e.preventDefault();
                 const header = $('#main-header');
-                const offset = header ? header.offsetHeight : 0;
+                const offset = header ? header.getBoundingClientRect().bottom + 16 : 0;
 
                 window.scrollTo({
-                    top: target.offsetTop - offset,
+                    top: target.getBoundingClientRect().top + window.scrollY - offset,
                     behavior: 'smooth'
                 });
             });
