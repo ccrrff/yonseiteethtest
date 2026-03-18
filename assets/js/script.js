@@ -139,9 +139,29 @@
         }
 
         hamburger.addEventListener('click', toggleMenu);
+
+        // Mobile nav accordion
+        $$('.mobile-nav-toggle', mobileMenu).forEach(btn => {
+            btn.addEventListener('click', () => {
+                const group = btn.closest('.mobile-nav-group');
+                const isOpen = group.classList.contains('open');
+                $$('.mobile-nav-group', mobileMenu).forEach(g => g.classList.remove('open'));
+                if (!isOpen) group.classList.add('open');
+            });
+        });
+
+        // Close menu on sub-link click
+        $$('.mobile-nav-sub a', mobileMenu).forEach(link => {
+            link.addEventListener('click', () => closeMenu());
+        });
+
         $$('.mobile-link', mobileMenu).forEach(link => {
             link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href');
+                if (href && href.startsWith('tel:')) {
+                    closeMenu();
+                    return;
+                }
                 if (href && href !== '#') {
                     e.preventDefault();
                     closeMenu();
@@ -289,24 +309,23 @@
         });
     }
 
-    // 8. FAB Cluster (hover on desktop, tap on mobile)
+    // 8. Floating Contact Widget (hover on desktop, tap on mobile)
     function initFAB() {
-        const cluster = $('#fab-cluster');
-        if (!cluster) return;
+        const widget = $('#floating-contact');
+        if (!widget) return;
 
-        const mainBtn = cluster.querySelector('.fab-main');
-        if (!mainBtn) return;
+        const trigger = widget.querySelector('.floating-trigger');
+        if (!trigger) return;
 
-        // Touch fallback for devices without hover
         const hasHover = window.matchMedia('(hover: hover)').matches;
         if (!hasHover) {
-            mainBtn.addEventListener('click', (e) => {
+            trigger.addEventListener('click', (e) => {
                 e.stopPropagation();
-                cluster.classList.toggle('open');
+                widget.classList.toggle('open');
             });
 
             document.addEventListener('click', (e) => {
-                if (!cluster.contains(e.target)) cluster.classList.remove('open');
+                if (!widget.contains(e.target)) widget.classList.remove('open');
             });
         }
     }
@@ -384,7 +403,75 @@
         });
     }
 
-    // 10. Anchor Scroll
+    // 11. Hero Slider (GSAP) with indicators
+    function initHeroSlider() {
+        const slides = $$('.hero-slider picture.slide-item');
+        if (slides.length < 2 || typeof gsap === 'undefined') return;
+
+        const indicatorWrap = $('#hero-indicators');
+        let currentIndex = 0;
+        let autoplayTimer = null;
+
+        gsap.set(slides, { opacity: 0, zIndex: 0 });
+        gsap.set(slides[0], { opacity: 1, zIndex: 1 });
+
+        // Build indicators
+        if (indicatorWrap) {
+            slides.forEach((_, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'hero-indicator' + (i === 0 ? ' active' : '');
+                btn.setAttribute('aria-label', 'Slide ' + (i + 1));
+                const fill = document.createElement('span');
+                fill.className = 'hero-indicator-fill';
+                btn.appendChild(fill);
+                btn.addEventListener('click', () => goToSlide(i));
+                indicatorWrap.appendChild(btn);
+            });
+        }
+
+        const indicators = $$('.hero-indicator', indicatorWrap);
+
+        function updateIndicators(index) {
+            indicators.forEach((ind, i) => {
+                ind.classList.toggle('active', i === index);
+                // Reset fill animation
+                const fill = ind.querySelector('.hero-indicator-fill');
+                if (fill) {
+                    fill.style.animation = 'none';
+                    fill.offsetHeight; // trigger reflow
+                    fill.style.animation = '';
+                }
+            });
+        }
+
+        function goToSlide(nextIndex) {
+            if (nextIndex === currentIndex) return;
+            clearInterval(autoplayTimer);
+
+            gsap.set(slides[nextIndex], { zIndex: 1 });
+            gsap.to(slides[nextIndex], { opacity: 1, duration: 1.5, ease: 'power2.inOut' });
+            gsap.set(slides[currentIndex], { zIndex: 0 });
+            gsap.to(slides[currentIndex], { opacity: 0, duration: 1.5, ease: 'power2.inOut' });
+
+            currentIndex = nextIndex;
+            updateIndicators(currentIndex);
+            startAutoplay();
+        }
+
+        function nextSlide() {
+            goToSlide((currentIndex + 1) % slides.length);
+        }
+
+        function startAutoplay() {
+            clearInterval(autoplayTimer);
+            autoplayTimer = setInterval(nextSlide, 4000);
+        }
+
+        updateIndicators(0);
+        startAutoplay();
+    }
+
+    // 12. Anchor Scroll
     function initAnchors() {
         $$('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
@@ -418,6 +505,7 @@
         initFAB();
         initHeaderCTA();
         initForm();
+        initHeroSlider();
         initAnchors();
     });
 })();
