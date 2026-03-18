@@ -62,8 +62,8 @@ input, textarea, select { font-family: inherit; font-size: inherit; outline: non
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* ============================================================ HEADER ============================================================ */
-#main-header, .main-header { position: fixed; top: 24px; left: 0; right: 0; z-index: 1000; padding: 0 40px; height: 72px; display: flex; justify-content: center; transition: all 0.3s; pointer-events: none; }
-#main-header.scrolled, .main-header.scrolled { top: 12px; }
+#main-header, .main-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 20px; padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); height: 72px; display: flex; justify-content: center; transition: all 0.3s; pointer-events: none; overflow: hidden; }
+#main-header.scrolled, .main-header.scrolled { top: 0; }
 .header-inner { max-width: var(--container); width: 100%; display: flex; align-items: center; justify-content: space-between; pointer-events: auto; }
 .header-logo { display: inline-flex; align-items: center; }
 .header-logo img { display: block; height: 40px; width: auto; filter: invert(0); } /* Adjust based on logo color */
@@ -427,6 +427,8 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
 
 /* ============================================================ DESKTOP 1025px+ ============================================================ */
 @media (min-width: 1025px) {
+  #main-header, .main-header { top: 24px; padding: 0 40px; overflow: visible; }
+  #main-header.scrolled, .main-header.scrolled { top: 12px; }
   .header-nav { display: flex !important; }
   .header-cta-wrap { display: inline-flex !important; }
   .hamburger { display: none !important; }
