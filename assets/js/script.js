@@ -72,8 +72,20 @@
             panels.forEach(p => p.classList.toggle('active', p.dataset.panel === catId));
         }
 
+        let closeTimeout = null;
+        function scheduleClose() {
+            if (closeTimeout) clearTimeout(closeTimeout);
+            closeTimeout = setTimeout(closeMega, 300);
+        }
+        function cancelClose() {
+            if (closeTimeout) { clearTimeout(closeTimeout); closeTimeout = null; }
+        }
+
+        const headerNav = $('.header-nav');
+
         navItems.forEach(item => {
             item.addEventListener('mouseenter', () => {
+                cancelClose();
                 const menuId = item.dataset.menu;
                 if (menuId) {
                     openMega();
@@ -83,10 +95,20 @@
         });
 
         cats.forEach(cat => {
-            cat.addEventListener('mouseenter', () => activateCat(cat.dataset.cat));
+            cat.addEventListener('mouseenter', () => {
+                cancelClose();
+                activateCat(cat.dataset.cat);
+            });
         });
 
-        mega.addEventListener('mouseleave', closeMega);
+        mega.addEventListener('mouseenter', cancelClose);
+        mega.addEventListener('mouseleave', scheduleClose);
+
+        if (headerNav) {
+            headerNav.addEventListener('mouseenter', cancelClose);
+            headerNav.addEventListener('mouseleave', scheduleClose);
+        }
+
         if (closeBtn) closeBtn.addEventListener('click', closeMega);
 
         document.addEventListener('keydown', (e) => {
@@ -103,17 +125,17 @@
         function toggleMenu() {
             const isOpen = hamburger.classList.toggle('active');
             mobileMenu.classList.toggle('open', isOpen);
-            document.body.classList.toggle('no-scroll', isOpen);
             hamburger.setAttribute('aria-expanded', isOpen);
             mobileMenu.setAttribute('aria-hidden', !isOpen);
+            document.body.classList.toggle('no-scroll', isOpen);
         }
 
         function closeMenu() {
             hamburger.classList.remove('active');
             mobileMenu.classList.remove('open');
-            document.body.classList.remove('no-scroll');
             hamburger.setAttribute('aria-expanded', 'false');
             mobileMenu.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('no-scroll');
         }
 
         hamburger.addEventListener('click', toggleMenu);
@@ -138,6 +160,14 @@
                     closeMenu();
                 }
             });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (mobileMenu.classList.contains('open') &&
+                !mobileMenu.contains(e.target) &&
+                !hamburger.contains(e.target)) {
+                closeMenu();
+            }
         });
     }
 
@@ -210,7 +240,45 @@
         nums.forEach(n => observer.observe(n));
     }
 
-    // 7. Bento Grid Hover
+    // 7. Doctor Credentials Accordion (mobile only)
+    function initDoctorAccordion() {
+        const groups = $$('.cred-group');
+        if (!groups.length) return;
+
+        const mql = window.matchMedia('(max-width: 768px)');
+
+        function setup(isMobile) {
+            groups.forEach((group, i) => {
+                const title = group.querySelector('.cred-title');
+                if (!title) return;
+
+                // Remove old listener by cloning
+                const newTitle = title.cloneNode(true);
+                title.parentNode.replaceChild(newTitle, title);
+
+                if (isMobile) {
+                    // Open first group by default
+                    if (i === 0) group.classList.add('cred-open');
+                    else group.classList.remove('cred-open');
+
+                    newTitle.addEventListener('click', () => {
+                        const isOpen = group.classList.contains('cred-open');
+                        // Close all
+                        groups.forEach(g => g.classList.remove('cred-open'));
+                        // Toggle current
+                        if (!isOpen) group.classList.add('cred-open');
+                    });
+                } else {
+                    group.classList.remove('cred-open');
+                }
+            });
+        }
+
+        setup(mql.matches);
+        mql.addEventListener('change', (e) => setup(e.matches));
+    }
+
+    // 7b. Bento Grid Hover
     function initBentoHover() {
         const cards = $$('.bento-card');
         if (!cards.length) return;
@@ -345,6 +413,7 @@
         initMobileMenu();
         initFAQ();
         initCounters();
+        initDoctorAccordion();
         initBentoHover();
         initFAB();
         initHeaderCTA();

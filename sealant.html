@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>실란트 — 연세더나은치과</title>
+  <meta name="description" content="연세더나은치과 실란트 안내">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Noto+Sans+KR:wght@200;300;400;500;700&family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <header id="main-header" class="main-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo" aria-label="연세더나은치과 홈">
+        <img src="assets/images/logo.png?v=2" alt="연세더나은치과 로고" width="140" height="40">
+      </a>
+      <nav class="header-nav" aria-label="주요 메뉴">
+        <ul class="nav-list">
+          <li class="nav-item" data-menu="about"><a href="index.html#about">연세더나은치과</a></li>
+          <li class="nav-item" data-menu="implant"><a href="implant-main.html">임플란트</a></li>
+          <li class="nav-item" data-menu="ortho"><a href="orthodontics.html">치아교정</a></li>
+          <li class="nav-item" data-menu="general"><a href="cavity.html">일반치료</a></li>
+          <li class="nav-item" data-menu="cosmetic"><a href="prosthetics.html">심미치료</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta-wrap">
+        <a href="tel:0332442080" class="btn btn-primary header-cta">상담예약 &amp; 전화</a>
+        <div class="header-cta-dropdown">
+          <a href="#" class="cta-drop-item cta-kakao"><i class="ri-kakao-talk-fill"></i> 카카오톡</a>
+          <a href="#" class="cta-drop-item cta-naver"><i class="ri-naver-fill"></i> 네이버</a>
+          <a href="tel:0332442080" class="cta-drop-item cta-phone"><i class="ri-phone-line"></i> 전화</a>
+          <a href="index.html#location" class="cta-drop-item cta-location"><i class="ri-map-pin-line"></i> 오시는 길</a>
+        </div>
+      </div>
+      <button id="hamburger" class="hamburger" aria-label="메뉴 열기" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <div id="mega-menu" class="mega-menu" aria-hidden="true">
+    <button class="mega-close" aria-label="메뉴 닫기"><i class="ri-close-line"></i></button>
+    <div class="mega-inner">
+      <div class="mega-categories">
+        <button class="mega-cat" data-cat="about"><span class="mega-cat-num">01</span>연세더나은치과</button>
+        <button class="mega-cat" data-cat="implant"><span class="mega-cat-num">02</span>임플란트</button>
+        <button class="mega-cat" data-cat="ortho"><span class="mega-cat-num">03</span>치아교정</button>
+        <button class="mega-cat" data-cat="general"><span class="mega-cat-num">04</span>일반치료</button>
+        <button class="mega-cat" data-cat="cosmetic"><span class="mega-cat-num">05</span>심미치료</button>
+      </div>
+      <div class="mega-details">
+        <div class="mega-panel" data-panel="about">
+          <ul class="mega-links">
+            <li><a href="index.html#about">인사말</a></li>
+            <li><a href="index.html#doctor">의료진 소개</a></li>
+            <li><a href="index.html#location">오시는 길</a></li>
+          </ul>
+          <div class="mega-preview"><img src="assets/images/clinic_interior_1773580981909.png" alt="클리닉 내부" loading="lazy" decoding="async"></div>
+        </div>
+        <div class="mega-panel" data-panel="implant">
+          <ul class="mega-links">
+            <li><a href="implant-main.html">임플란트</a></li>
+            <li><a href="sinus-lift.html">상악동거상술</a></li>
+            <li><a href="bone-graft.html">뼈이식 임플란트</a></li>
+            <li><a href="implant-redo.html">임플란트 재수술</a></li>
+            <li><a href="insurance-implant.html">보험 임플란트</a></li>
+          </ul>
+          <div class="mega-preview"><img src="assets/images/implant_treatment_1773580947934.png" alt="임플란트" loading="lazy" decoding="async"></div>
+        </div>
+        <div class="mega-panel" data-panel="ortho">
+          <ul class="mega-links">
+            <li><a href="orthodontics.html">치아교정</a></li>
+            <li><a href="partial-ortho.html">부분교정</a></li>
+            <li><a href="pediatric-ortho.html">소아교정</a></li>
+          </ul>
+          <div class="mega-preview"><img src="assets/images/clinic_interior_1773580981909.png" alt="치아교정" loading="lazy" decoding="async"></div>
+        </div>
+        <div class="mega-panel" data-panel="general">
+          <ul class="mega-links">
+            <li><a href="cavity.html">충치치료</a></li>
+            <li><a href="root-canal.html">신경치료</a></li>
+            <li><a href="perio.html">치주치료</a></li>
+            <li><a href="wisdom-tooth.html">사랑니 발치</a></li>
+            <li><a href="sealant.html">실란트</a></li>
+            <li><a href="bruxism.html">이갈이</a></li>
+          </ul>
+          <div class="mega-preview"><img src="assets/images/categories/04_General treatment/05_Dental Sealant.png" alt="일반치료" loading="lazy" decoding="async"></div>
+        </div>
+        <div class="mega-panel" data-panel="cosmetic">
+          <ul class="mega-links">
+            <li><a href="prosthetics.html">보철치료</a></li>
+            <li><a href="zirconia.html">지르코니아</a></li>
+            <li><a href="whitening.html">치아미백</a></li>
+            <li><a href="scaling.html">스케일링</a></li>
+          </ul>
+          <div class="mega-preview"><img src="assets/images/treatment_aesthetic_1773582029060.png" alt="심미치료" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <nav class="mobile-menu-inner">
+      <a href="index.html#about" class="mobile-link">연세더나은치과</a>
+      <a href="implant-main.html" class="mobile-link">임플란트</a>
+      <a href="orthodontics.html" class="mobile-link">치아교정</a>
+      <a href="cavity.html" class="mobile-link">일반치료</a>
+      <a href="prosthetics.html" class="mobile-link">심미치료</a>
+      <a href="tel:0332442080" class="mobile-link mobile-cta">전화 상담</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="section page-hero">
+      <div class="container">
+        <div class="page-hero-inner" data-animate="fade-up">
+          <div class="section-label">GENERAL</div>
+          <h1 class="page-hero-title">실란트</h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="section treat-single">
+      <div class="container">
+        <div class="treat-single-inner" data-animate="fade-up">
+          <div class="treat-single-image glass-panel">
+            <img src="assets/images/categories/04_General treatment/05_Dental Sealant.png" alt="실란트" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <img src="assets/images/logo.png?v=2" alt="연세더나은치과" width="120" height="36" loading="lazy" decoding="async">
+        </div>
+        <div class="footer-columns">
+          <div class="footer-col"><h4>연세더나은치과</h4><ul><li><a href="index.html#about">인사말</a></li><li><a href="index.html#doctor">의료진 소개</a></li><li><a href="index.html#location">오시는 길</a></li></ul></div>
+          <div class="footer-col"><h4>임플란트</h4><ul><li><a href="implant-main.html">임플란트</a></li><li><a href="sinus-lift.html">상악동거상술</a></li><li><a href="bone-graft.html">뼈이식 임플란트</a></li><li><a href="implant-redo.html">임플란트 재수술</a></li><li><a href="insurance-implant.html">보험 임플란트</a></li></ul></div>
+          <div class="footer-col"><h4>치아교정</h4><ul><li><a href="orthodontics.html">치아교정</a></li><li><a href="partial-ortho.html">부분교정</a></li><li><a href="pediatric-ortho.html">소아교정</a></li></ul></div>
+          <div class="footer-col"><h4>일반치료</h4><ul><li><a href="cavity.html">충치치료</a></li><li><a href="root-canal.html">신경치료</a></li><li><a href="perio.html">치주치료</a></li><li><a href="wisdom-tooth.html">사랑니 발치</a></li><li><a href="sealant.html">실란트</a></li><li><a href="bruxism.html">이갈이</a></li></ul></div>
+          <div class="footer-col"><h4>심미치료</h4><ul><li><a href="prosthetics.html">보철치료</a></li><li><a href="zirconia.html">지르코니아</a></li><li><a href="whitening.html">치아미백</a></li><li><a href="scaling.html">스케일링</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal"><a href="#">개인정보처리방침</a><a href="#">이용약관</a></div>
+        <p class="footer-copyright">&copy; 2026 연세더나은치과. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="fab-cluster" class="fab-cluster">
+    <button class="fab-main" aria-label="빠른 문의"><i class="ri-phone-line fab-icon-open"></i><i class="ri-close-line fab-icon-close"></i></button>
+    <a href="#" class="fab-sub" data-tooltip="카카오톡 상담" aria-label="카카오톡 상담"><i class="ri-kakao-talk-fill"></i></a>
+    <a href="#" class="fab-sub" data-tooltip="네이버 톡톡" aria-label="네이버 톡톡"><svg class="naver-talktalk-icon" viewBox="0 0 32 32" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 2C8.268 2 2 7.373 2 13.91c0 4.13 2.655 7.752 6.678 9.854l-1.344 4.89a.5.5 0 0 0 .764.542l5.672-3.78c.74.072 1.49.11 2.23.11 7.732 0 14-5.373 14-11.616C30 7.373 23.732 2 16 2Z" fill="#fff"/><path d="M11.2 10.4h-1.6v6.4h1.6v-2.56l2.56 2.56h2.24l-3.2-3.2 3.04-3.2h-2.08l-2.56 2.72V10.4Zm8 0h-1.6v6.4h1.6v-6.4Zm-3.6 0v6.4h1.6v-6.4h-1.6Z" fill="#03C75A"/></svg></a>
+    <a href="tel:0332442080" class="fab-sub" data-tooltip="전화 문의" aria-label="전화 문의"><i class="ri-phone-line"></i></a>
+  </div>
+
+  <div id="mobile-bottom-bar" class="mobile-bottom-bar">
+    <a href="tel:0332442080" class="mobile-bar-btn"><i class="ri-phone-line"></i><span>전화</span></a>
+    <a href="#" class="mobile-bar-btn"><i class="ri-kakao-talk-fill"></i><span>카톡상담</span></a>
+    <a href="index.html#location" class="mobile-bar-btn"><i class="ri-map-pin-line"></i><span>오시는길</span></a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
