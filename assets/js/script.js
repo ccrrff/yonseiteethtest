@@ -45,74 +45,53 @@
         }, { passive: true });
     }
 
-    // 3. Mega Menu (desktop)
+    // 3. Nav Dropdown (desktop hover)
     function initMegaMenu() {
-        const mega = $('#mega-menu');
-        if (!mega) return;
-
         const navItems = $$('.nav-item');
-        const cats = $$('.mega-cat', mega);
-        const panels = $$('.mega-panel', mega);
-        const closeBtn = $('.mega-close', mega);
-
-        function openMega() {
-            mega.classList.add('open');
-            mega.setAttribute('aria-hidden', 'false');
-        }
-
-        function closeMega() {
-            mega.classList.remove('open');
-            mega.setAttribute('aria-hidden', 'true');
-            cats.forEach(c => c.classList.remove('active'));
-            panels.forEach(p => p.classList.remove('active'));
-        }
-
-        function activateCat(catId) {
-            cats.forEach(c => c.classList.toggle('active', c.dataset.cat === catId));
-            panels.forEach(p => p.classList.toggle('active', p.dataset.panel === catId));
-        }
+        if (!navItems.length) return;
 
         let closeTimeout = null;
-        function scheduleClose() {
-            if (closeTimeout) clearTimeout(closeTimeout);
-            closeTimeout = setTimeout(closeMega, 300);
-        }
-        function cancelClose() {
-            if (closeTimeout) { clearTimeout(closeTimeout); closeTimeout = null; }
+
+        function closeAll() {
+            navItems.forEach(item => item.classList.remove('dropdown-open'));
         }
 
-        const headerNav = $('.header-nav');
+        const hasHover = window.matchMedia('(hover: hover)').matches;
 
         navItems.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                cancelClose();
-                const menuId = item.dataset.menu;
-                if (menuId) {
-                    openMega();
-                    activateCat(menuId);
+            const dropdown = item.querySelector('.nav-dropdown');
+            if (!dropdown) return;
+
+            if (hasHover) {
+                item.addEventListener('mouseenter', () => {
+                    if (closeTimeout) { clearTimeout(closeTimeout); closeTimeout = null; }
+                    navItems.forEach(other => { if (other !== item) other.classList.remove('dropdown-open'); });
+                    item.classList.add('dropdown-open');
+                });
+
+                item.addEventListener('mouseleave', () => {
+                    closeTimeout = setTimeout(closeAll, 250);
+                });
+            }
+
+            // Click/touch toggle for all devices
+            item.querySelector(':scope > a').addEventListener('click', (e) => {
+                if (!hasHover) {
+                    e.preventDefault();
+                    const isOpen = item.classList.contains('dropdown-open');
+                    closeAll();
+                    if (!isOpen) item.classList.add('dropdown-open');
                 }
             });
         });
 
-        cats.forEach(cat => {
-            cat.addEventListener('mouseenter', () => {
-                cancelClose();
-                activateCat(cat.dataset.cat);
-            });
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-item')) closeAll();
         });
 
-        mega.addEventListener('mouseenter', cancelClose);
-        mega.addEventListener('mouseleave', scheduleClose);
-
-        if (headerNav) {
-            headerNav.addEventListener('mouseenter', cancelClose);
-            headerNav.addEventListener('mouseleave', scheduleClose);
-        }
-
-        if (closeBtn) closeBtn.addEventListener('click', closeMega);
-
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeMega();
+            if (e.key === 'Escape') closeAll();
         });
     }
 

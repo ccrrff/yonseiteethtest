@@ -27,16 +27,57 @@
   <header id="main-header" class="main-header">
     <div class="header-inner">
       <a href="#hero" class="header-logo" aria-label="연세더나은치과 홈">
-        <img src="assets/images/logo.png?v=2" alt="연세더나은치과 로고" width="140" height="40">
+        <img src="assets/images/logo1.png?v=2" alt="연세더나은치과 로고" width="140" height="40">
       </a>
 
       <nav class="header-nav" aria-label="주요 메뉴">
         <ul class="nav-list">
-          <li class="nav-item" data-menu="about"><a href="#about">연세더나은치과</a></li>
-          <li class="nav-item" data-menu="implant"><a href="implant-main.html">임플란트</a></li>
-          <li class="nav-item" data-menu="ortho"><a href="orthodontics.html">치아교정</a></li>
-          <li class="nav-item" data-menu="general"><a href="cavity.html">일반치료</a></li>
-          <li class="nav-item" data-menu="cosmetic"><a href="prosthetics.html">심미치료</a></li>
+          <li class="nav-item" data-menu="about">
+            <a href="#about">연세더나은치과</a>
+            <ul class="nav-dropdown">
+              <li><a href="#about">인사말</a></li>
+              <li><a href="#doctor">의료진 소개</a></li>
+              <li><a href="#location">오시는 길</a></li>
+            </ul>
+          </li>
+          <li class="nav-item" data-menu="implant">
+            <a href="implant-main.html">임플란트</a>
+            <ul class="nav-dropdown">
+              <li><a href="implant-main.html">임플란트</a></li>
+              <li><a href="sinus-lift.html">상악동거상술</a></li>
+              <li><a href="bone-graft.html">뼈이식 임플란트</a></li>
+              <li><a href="implant-redo.html">임플란트 재수술</a></li>
+              <li><a href="insurance-implant.html">보험 임플란트</a></li>
+            </ul>
+          </li>
+          <li class="nav-item" data-menu="ortho">
+            <a href="orthodontics.html">치아교정</a>
+            <ul class="nav-dropdown">
+              <li><a href="orthodontics.html">치아교정</a></li>
+              <li><a href="partial-ortho.html">부분교정</a></li>
+              <li><a href="pediatric-ortho.html">소아교정</a></li>
+            </ul>
+          </li>
+          <li class="nav-item" data-menu="general">
+            <a href="cavity.html">일반치료</a>
+            <ul class="nav-dropdown">
+              <li><a href="cavity.html">충치치료</a></li>
+              <li><a href="root-canal.html">신경치료</a></li>
+              <li><a href="perio.html">치주치료</a></li>
+              <li><a href="wisdom-tooth.html">사랑니 발치</a></li>
+              <li><a href="sealant.html">실란트</a></li>
+              <li><a href="bruxism.html">이갈이</a></li>
+            </ul>
+          </li>
+          <li class="nav-item" data-menu="cosmetic">
+            <a href="prosthetics.html">심미치료</a>
+            <ul class="nav-dropdown">
+              <li><a href="prosthetics.html">보철치료</a></li>
+              <li><a href="zirconia.html">지르코니아</a></li>
+              <li><a href="whitening.html">치아미백</a></li>
+              <li><a href="scaling.html">스케일링</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
 
@@ -63,79 +104,6 @@
       </button>
     </div>
   </header>
-
-  <!-- ========== MEGA MENU ========== -->
-  <div id="mega-menu" class="mega-menu" aria-hidden="true">
-    <button class="mega-close" aria-label="메뉴 닫기"><i class="ri-close-line"></i></button>
-    <div class="mega-inner">
-      <div class="mega-categories">
-        <button class="mega-cat active" data-cat="about"><span class="mega-cat-num">01</span>연세더나은치과</button>
-        <button class="mega-cat" data-cat="implant"><span class="mega-cat-num">02</span>임플란트</button>
-        <button class="mega-cat" data-cat="ortho"><span class="mega-cat-num">03</span>치아교정</button>
-        <button class="mega-cat" data-cat="general"><span class="mega-cat-num">04</span>일반치료</button>
-        <button class="mega-cat" data-cat="cosmetic"><span class="mega-cat-num">05</span>심미치료</button>
-      </div>
-
-      <div class="mega-details">
-        <div class="mega-panel active" data-panel="about">
-          <ul class="mega-links">
-            <li><a href="#about">인사말</a></li>
-            <li><a href="#doctor">의료진 소개</a></li>
-            <li><a href="#location">오시는 길</a></li>
-          </ul>
-          <div class="mega-preview">
-            <img src="assets/images/clinic_interior_1773580981909.png" alt="클리닉 내부" loading="lazy" decoding="async">
-          </div>
-        </div>
-        <div class="mega-panel" data-panel="implant">
-          <ul class="mega-links">
-            <li><a href="implant-main.html">임플란트</a></li>
-            <li><a href="sinus-lift.html">상악동거상술</a></li>
-            <li><a href="bone-graft.html">뼈이식 임플란트</a></li>
-            <li><a href="implant-redo.html">임플란트 재수술</a></li>
-            <li><a href="insurance-implant.html">보험 임플란트</a></li>
-          </ul>
-          <div class="mega-preview">
-            <img src="assets/images/implant_treatment_1773580947934.png" alt="임플란트 치료" loading="lazy" decoding="async">
-          </div>
-        </div>
-        <div class="mega-panel" data-panel="ortho">
-          <ul class="mega-links">
-            <li><a href="orthodontics.html">치아교정</a></li>
-            <li><a href="partial-ortho.html">부분교정</a></li>
-            <li><a href="pediatric-ortho.html">소아교정</a></li>
-          </ul>
-          <div class="mega-preview">
-            <img src="assets/images/clinic_interior_1773580981909.png" alt="치아교정" loading="lazy" decoding="async">
-          </div>
-        </div>
-        <div class="mega-panel" data-panel="general">
-          <ul class="mega-links">
-            <li><a href="cavity.html">충치치료</a></li>
-            <li><a href="root-canal.html">신경치료</a></li>
-            <li><a href="perio.html">치주치료</a></li>
-            <li><a href="wisdom-tooth.html">사랑니 발치</a></li>
-            <li><a href="sealant.html">실란트</a></li>
-            <li><a href="bruxism.html">이갈이</a></li>
-          </ul>
-          <div class="mega-preview">
-            <img src="assets/images/treatment_general_1773582011690.png" alt="일반치료" loading="lazy" decoding="async">
-          </div>
-        </div>
-        <div class="mega-panel" data-panel="cosmetic">
-          <ul class="mega-links">
-            <li><a href="prosthetics.html">보철치료</a></li>
-            <li><a href="zirconia.html">지르코니아</a></li>
-            <li><a href="whitening.html">치아미백</a></li>
-            <li><a href="scaling.html">스케일링</a></li>
-          </ul>
-          <div class="mega-preview">
-            <img src="assets/images/treatment_aesthetic_1773582029060.png" alt="심미치료" loading="lazy" decoding="async">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- ========== MOBILE MENU ========== -->
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
@@ -198,16 +166,24 @@
         <div class="hero-showcase-inner">
           <div class="hero-bg-slider hero-slider">
             <picture class="slide-item">
-              <source media="(max-width: 1024px)" srcset="assets/images/mgbg.png">
+              <source media="(max-width: 1024px)" srcset="assets/images/bg.png">
               <img src="assets/images/bg.png" alt="연세더나은치과 전경 1" loading="eager">
             </picture>
             <picture class="slide-item">
-              <source media="(max-width: 1024px)" srcset="assets/images/mgbg2.png">
+              <source media="(max-width: 1024px)" srcset="assets/images/bg2.png">
               <img src="assets/images/bg2.png" alt="연세더나은치과 전경 2">
             </picture>
             <picture class="slide-item">
-              <source media="(max-width: 1024px)" srcset="assets/images/mgbg3.png">
+              <source media="(max-width: 1024px)" srcset="assets/images/bg3.png">
               <img src="assets/images/bg3.png" alt="연세더나은치과 전경 3">
+            </picture>
+            <picture class="slide-item">
+              <source media="(max-width: 1024px)" srcset="assets/images/bg4.png">
+              <img src="assets/images/bg4.png" alt="연세더나은치과 전경 4">
+            </picture>
+            <picture class="slide-item">
+              <source media="(max-width: 1024px)" srcset="assets/images/bg5.png">
+              <img src="assets/images/bg5.png" alt="연세더나은치과 전경 5">
             </picture>
             <div class="hero-bg-overlay"></div>
           </div>
@@ -368,10 +344,10 @@
       <div class="container">
       <div class="doctor-inner">
         <div class="doctor-image" data-animate="fade-up">
-          <img src="assets/images/doctorkim.png" alt="대표원장 이영석" loading="lazy" decoding="async">
+          <img src="assets/images/doctorkim.png" alt="대표원장 김태훈" loading="lazy" decoding="async">
           <div class="doctor-image-overlay">
             <div class="section-label">DOCTOR</div>
-            <h2 class="name-display">이영석</h2>
+            <h2 class="name-display">김태훈</h2>
             <p class="doctor-role">대표원장</p>
           </div>
         </div>
@@ -643,66 +619,55 @@
   <footer class="main-footer">
     <div class="container">
       <div class="footer-top">
-        <div class="footer-logo">
-          <img src="assets/images/logo.png?v=2" alt="연세더나은치과" width="120" height="36" loading="lazy" decoding="async">
-        </div>
-
         <div class="footer-columns">
-          <div class="footer-col">
-            <h4>연세더나은치과</h4>
-            <ul>
-              <li><a href="#about">인사말</a></li>
-              <li><a href="#doctor">의료진 소개</a></li>
-              <li><a href="#location">오시는 길</a></li>
-            </ul>
+          <div class="footer-col footer-info">
+            <div class="footer-logo">
+              <img src="assets/images/logo1.png?v=2" alt="연세더나은치과" width="140" height="40" loading="lazy" decoding="async">
+            </div>
+            <p class="footer-slogan">더 나은 진료, 더 나은 치과.</p>
+            <div class="footer-contact">
+              <a href="tel:0332442080" class="footer-phone">033-244-2080</a>
+              <p class="footer-address">강원도 춘천시 안마산로 111<br>와이나인빌딩 3층</p>
+            </div>
           </div>
-          <div class="footer-col">
-            <h4>임플란트</h4>
+          
+          <div class="footer-col footer-hours">
+            <h4>진료 시간</h4>
+            <table>
+              <tbody>
+                <tr><th>평일</th><td>09:00 - 18:00</td></tr>
+                <tr><th>토요일</th><td>09:00 - 14:00</td></tr>
+                <tr><th>점심시간</th><td>13:00 - 14:00</td></tr>
+                <tr><th class="closed">일요일·공휴일</th><td class="closed">휴진</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="footer-col footer-links">
+            <h4>주요 진료</h4>
             <ul>
               <li><a href="implant-main.html">임플란트</a></li>
-              <li><a href="sinus-lift.html">상악동거상술</a></li>
-              <li><a href="bone-graft.html">뼈이식 임플란트</a></li>
-              <li><a href="implant-redo.html">임플란트 재수술</a></li>
-              <li><a href="insurance-implant.html">보험 임플란트</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>치아교정</h4>
-            <ul>
               <li><a href="orthodontics.html">치아교정</a></li>
-              <li><a href="partial-ortho.html">부분교정</a></li>
-              <li><a href="pediatric-ortho.html">소아교정</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>일반치료</h4>
-            <ul>
-              <li><a href="cavity.html">충치치료</a></li>
-              <li><a href="root-canal.html">신경치료</a></li>
-              <li><a href="perio.html">치주치료</a></li>
-              <li><a href="wisdom-tooth.html">사랑니 발치</a></li>
-              <li><a href="sealant.html">실란트</a></li>
-              <li><a href="bruxism.html">이갈이</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>심미치료</h4>
-            <ul>
-              <li><a href="prosthetics.html">보철치료</a></li>
-              <li><a href="zirconia.html">지르코니아</a></li>
-              <li><a href="whitening.html">치아미백</a></li>
-              <li><a href="scaling.html">스케일링</a></li>
+              <li><a href="cavity.html">일반치료</a></li>
+              <li><a href="prosthetics.html">심미치료</a></li>
+              <li><a href="#about">병원 소개</a></li>
             </ul>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div class="footer-legal">
-          <a href="#">개인정보처리방침</a>
-          <a href="#">이용약관</a>
+        <div class="footer-legal-wrap">
+          <div class="footer-legal">
+            <a href="#">개인정보처리방침</a>
+            <a href="#">이용약관</a>
+          </div>
+          <div class="footer-biz-info">
+            상호: 연세더나은치과의원 | 대표자: 김태훈 | 사업자등록번호: 안내 준비중<br>
+            주소: 강원도 춘천시 안마산로 111, 와이나인빌딩 3층
+          </div>
         </div>
-        <p class="footer-copyright">&copy; 2026 연세더나은치과. All rights reserved.</p>
+        <div class="footer-copyright">&copy; 2026 연세더나은치과. All rights reserved.</div>
       </div>
     </div>
   </footer>
