@@ -336,7 +336,7 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
 .location-social { display: flex; gap: 12px; margin-top: 16px; }
 .location-social a { width: 48px; height: 48px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--text); transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 .location-social a:hover { color: #fff; background: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(86,180,233,0.3); }
-.location-map { overflow: hidden; height: 380px; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 16px 48px rgba(0,0,0,0.05); }
+.location-map { overflow: hidden; height: 494px; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 16px 48px rgba(0,0,0,0.05); }
 .location-map iframe, .location-map img { width: 100%; height: 100%; object-fit: contain; border: none; background: #f0f2f8; }
 .location-hours { background: rgba(255,255,255,0.4); backdrop-filter: blur(24px); border: 1px solid var(--border); border-radius: 24px; padding: 40px; }
 .location-hours h3 { font-family: 'Outfit', 'Noto Sans KR', sans-serif; font-size: 18px; font-weight: 400; color: var(--text); margin-bottom: 20px; letter-spacing: -0.01em; }
@@ -547,7 +547,7 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
 
   /* Location: 1 column, reduce map height */
   .location-grid { grid-template-columns: 1fr; }
-  .location-map { height: 300px; }
+  .location-map { height: 390px; }
 
   /* Footer */
   .footer-top { flex-direction: column; align-items: center; margin-bottom: 32px; gap: 24px; }
@@ -639,7 +639,7 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
   .consultation-form-wrap { padding: 32px 20px; }
 
   /* Location */
-  .location-map { height: 260px; }
+  .location-map { height: 338px; }
   .location-contact { padding: 24px; }
   .location-hours { padding: 24px; }
   .hours-table td { font-size: 14px; padding: 12px 0; }
