@@ -98,14 +98,13 @@
 
             // Click/touch toggle — always active so touch devices always work
             item.querySelector(':scope > a').addEventListener('click', (e) => {
-                // On true hover+fine-pointer devices, let the link navigate normally
-                if (hoverMql.matches) return;
+                // On large desktop with hover, let the link navigate normally
+                if (hoverMql.matches && window.innerWidth > 1024) return;
                 e.preventDefault();
                 const isOpen = item.classList.contains('dropdown-open');
                 closeAll();
                 if (!isOpen) {
                     item.classList.add('dropdown-open');
-                    positionDropdown(item, dropdown);
                 }
             });
         });
@@ -504,6 +503,9 @@
             link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href');
                 if (href === '#') return;
+                // nav-item with dropdown — handled by initMegaMenu, skip anchor scroll
+                const navItem = link.closest('.nav-item');
+                if (navItem && navItem.querySelector('.nav-dropdown') && window.innerWidth <= 1024) return;
 
                 const target = $(href);
                 if (!target) return;

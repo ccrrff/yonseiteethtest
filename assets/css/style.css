@@ -459,11 +459,11 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
   .header-inner { z-index: 1003; }
   .header-nav { padding: 4px; }
   .nav-item > a { font-size: 13px; padding: 8px 12px; }
-  .nav-dropdown { position: fixed; min-width: 140px; padding: 8px; border-radius: 14px; left: auto; transform: translateY(-8px); }
-  .nav-item.dropdown-open .nav-dropdown { transform: translateY(0); }
+  .nav-dropdown { min-width: 140px; padding: 8px; border-radius: 14px; top: calc(100% + 4px); }
+  .nav-item.dropdown-open .nav-dropdown { transform: translateX(-50%) translateY(0) scale(1); }
   .nav-dropdown li a { padding: 10px 14px; font-size: 13px; }
   .mobile-menu { display: none !important; }
-  #hero { padding: 110px 32px 40px; margin-top: 0; min-height: auto; }
+  #hero { padding: 130px 32px 40px; margin-top: 0; min-height: auto; }
   .hero-showcase-inner { min-height: auto; aspect-ratio: 1282/528; padding: 0; flex-direction: column; justify-content: flex-end; align-items: stretch; border-radius: 20px; }
   .hero-indicators { bottom: 20px; right: 50%; transform: translateX(50%); }
   .hero-bg-overlay { background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.95) 100%); }
@@ -491,6 +491,7 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
   .nav-item > a { font-size: 12px; padding: 6px 8px; }
   .nav-dropdown { min-width: 120px; padding: 6px; border-radius: 12px; }
   .nav-dropdown li a { padding: 8px 12px; font-size: 12px; }
+  #hero { padding-top: 150px; }
   .hero-inner { padding: 0 20px; }
 
   /* Trust: 2x2 grid — hide dividers on right-edge (even) items */
@@ -607,7 +608,7 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
   .hero-content { padding: 32px 20px; margin: auto 0 0; border-radius: 20px; }
   .hero-heading { font-size: 36px; }
   .hero-subtitle { font-size: 16px; margin-bottom: 32px; }
-  #hero { padding: 80px 20px 40px; }
+  #hero { padding: 120px 20px 40px; }
 
   /* Trust */
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
@@ -713,7 +714,7 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
 
 /* Responsive */
 @media (max-width: 768px) {
-  .page-hero { padding-top: 120px; padding-bottom: 24px; }
+  .page-hero { padding-top: 140px; padding-bottom: 24px; }
   .treat-detail { padding: 24px 0; }
   .treat-detail-inner { grid-template-columns: 1fr; gap: 24px; }
   .treat-detail-reverse .treat-detail-inner { direction: ltr; }
