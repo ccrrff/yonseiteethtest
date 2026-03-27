@@ -348,34 +348,21 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
 .hours-closed td { color: var(--accent) !important; font-weight: 500; }
 
 /* ============================================================ FOOTER ============================================================ */
-.main-footer { background: rgba(20, 20, 20, 0.85); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); padding: 72px 0 40px; color: rgba(255, 255, 255, 0.7); border-top: 1px solid rgba(255, 255, 255, 0.1); position: relative; z-index: 10; }
-.footer-top { margin-bottom: 48px; }
-.footer-columns { display: grid; grid-template-columns: 350px 1fr 180px; gap: 60px; }
-.footer-col { display: flex; flex-direction: column; }
-.footer-logo { margin-bottom: 24px; }
-.footer-logo img { height: 44px; width: auto; filter: invert(1); opacity: 0.9; }
-.footer-slogan { font-family: 'Outfit', 'Noto Sans KR', sans-serif; font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.9); margin-bottom: 24px; letter-spacing: -0.01em; }
-.footer-contact { display: flex; flex-direction: column; gap: 12px; }
-.footer-phone { font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 300; color: var(--accent); transition: color 0.2s; letter-spacing: 0.05em; display: inline-block; }
-.footer-phone:hover { color: var(--accent-light); }
-.footer-address { font-size: 14px; line-height: 1.6; color: rgba(255, 255, 255, 0.6); }
-.footer-col h4 { font-family: 'Outfit', 'Noto Sans KR', sans-serif; font-size: 16px; margin-bottom: 24px; color: rgba(255, 255, 255, 0.9); font-weight: 500; letter-spacing: -0.01em; }
-.footer-hours table { width: 100%; border-collapse: collapse; max-width: 340px; }
-.footer-hours th, .footer-hours td { padding: 10px 0; font-size: 14px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-.footer-hours th { font-weight: 400; color: rgba(255, 255, 255, 0.5); width: 110px; }
-.footer-hours td { color: rgba(255, 255, 255, 0.85); font-family: 'Outfit', 'Noto Sans KR', sans-serif; font-weight: 300; letter-spacing: 0.02em; }
-.footer-hours tr:last-child th, .footer-hours tr:last-child td { border-bottom: none; }
-.footer-hours .closed { color: var(--accent-light); }
-.footer-links ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
-.footer-links li a { display: inline-block; font-size: 15px; font-weight: 300; color: rgba(255, 255, 255, 0.6); transition: all 0.2s; }
-.footer-links li a:hover { color: var(--accent); padding-left: 4px; }
-.footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 32px; display: flex; justify-content: space-between; align-items: flex-end; }
-.footer-legal-wrap { display: flex; flex-direction: column; gap: 16px; }
-.footer-legal { display: flex; gap: 24px; }
-.footer-legal a { font-size: 14px; color: rgba(255, 255, 255, 0.9); font-weight: 400; transition: color 0.2s; }
+.main-footer { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); padding: 32px 0 32px; color: var(--text-muted); border-top: 1px solid var(--border); position: relative; z-index: 10; }
+.footer-top { margin-bottom: 48px; display: flex; flex-direction: row; align-items: center; gap: 60px; }
+.footer-logo { margin-bottom: 0; flex-shrink: 0; }
+.footer-logo img { height: 80px; width: auto; filter: invert(0); }
+.footer-columns { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 48px; flex: 1; }
+.footer-col { display: flex; flex-direction: column; flex: 1; min-width: 110px; }
+.footer-col h4 { font-family: 'Outfit', 'Noto Sans KR', sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); font-weight: 600; margin-bottom: 20px; text-align: left; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer-col li a { display: inline-block; font-size: 14px; font-weight: 300; color: var(--text-muted); padding: 2px 0; transition: all 0.2s; text-align: left; }
+.footer-col li a:hover { color: var(--accent); transform: translateX(4px); }
+.footer-bottom { border-top: 1px solid rgba(0,0,0,0.05); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 300; max-width: 900px; margin: 0 auto; width: 100%; }
+.footer-legal { display: flex; gap: 32px; }
+.footer-legal a { color: var(--text-muted); transition: color 0.2s; }
 .footer-legal a:hover { color: var(--accent); }
-.footer-biz-info { font-size: 13px; color: rgba(255, 255, 255, 0.4); line-height: 1.6; }
-.footer-copyright { font-size: 13px; font-family: 'Outfit', sans-serif; color: rgba(255, 255, 255, 0.3); text-align: right; margin-bottom: 4px; }
+.footer-copyright { font-size: 13px; font-family: 'Outfit', sans-serif; color: var(--text-muted); }
 
 /* ============================================================ BUTTONS ============================================================ */
 .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; padding: 14px 32px; font-size: 15px; font-family: 'Outfit', sans-serif; font-weight: 400; border-radius: 50px; transition: all 0.2s; border: none; box-shadow: 0 8px 24px rgba(86,180,233,0.2); }
@@ -556,11 +543,16 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
   .location-map { height: 300px; }
 
   /* Footer */
-  .footer-columns { grid-template-columns: 1fr 1fr; gap: 48px; }
-  .footer-col.footer-info { grid-column: 1 / -1; }
-  .footer-bottom { flex-direction: column; gap: 24px; align-items: flex-start; }
-  .footer-copyright { text-align: left; }
-  .footer-top { margin-bottom: 48px; }
+  .footer-top { flex-direction: column; align-items: center; margin-bottom: 32px; gap: 24px; }
+  .footer-logo { text-align: center; }
+  .footer-logo img { height: 72px; }
+  .footer-columns { display: flex; flex-wrap: nowrap; gap: 0; width: 100%; }
+  .footer-col { flex: 1; min-width: 0; text-align: center; }
+  .footer-col h4 { font-size: 11px; margin-bottom: 8px; text-align: center; }
+  .footer-col li a { font-size: 11px; }
+  .footer-col ul { gap: 4px; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; max-width: 100%; }
+  .footer-legal { flex-wrap: wrap; justify-content: center; gap: 24px; }
 
   .floating-contact { display: block; bottom: 60px; right: 16px; z-index: 901; }
   .floating-trigger { width: 52px; height: 52px; font-size: 22px; }
@@ -645,10 +637,15 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
   .location-hours { padding: 24px; }
   .hours-table td { font-size: 14px; padding: 12px 0; }
 
-  /* Footer: single column */
-  .footer-columns { grid-template-columns: 1fr; gap: 40px; }
-  .footer-top { margin-bottom: 40px;  }
-  .main-footer { padding: 48px 0 40px; }
+  /* Footer: compact row */
+  .footer-top { gap: 16px; margin-bottom: 20px; }
+  .footer-logo img { height: 60px; }
+  .footer-col h4 { font-size: 10px; margin-bottom: 6px; }
+  .footer-col li a { font-size: 10px; }
+  .footer-col ul { gap: 3px; }
+  .footer-col li a { font-size: 11px; text-align: center; }
+  .footer-col ul { gap: 4px; align-items: center; }
+  .main-footer { padding: 16px 0 24px; }
 
   .section-header { flex-direction: column; align-items: flex-start; gap: 16px; }
   .statement-quote { font-size: 72px; }
