@@ -65,9 +65,10 @@ input, textarea, select { font-family: inherit; font-size: inherit; outline: non
 #main-header, .main-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 10px 20px 8px; padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); height: auto; display: flex; justify-content: center; transition: all 0.3s; pointer-events: none; overflow: visible; }
 #main-header.scrolled, .main-header.scrolled { top: 0; }
 .header-inner { max-width: var(--container); width: 100%; display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: auto; }
+.header-nav-row { display: flex; align-items: center; gap: 8px; overflow: visible; }
 .header-logo { display: inline-flex; align-items: center; }
 .header-logo img { display: block; height: 40px; width: auto; filter: invert(0); } /* Adjust based on logo color */
-.header-nav { display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.5); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid var(--border); border-radius: 50px; padding: 7px; box-shadow: 0 4px 24px rgba(0,0,0,0.03); }
+.header-nav { display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.5); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid var(--border); border-radius: 50px; padding: 7px; box-shadow: 0 4px 24px rgba(0,0,0,0.03); overflow: visible; }
 .nav-list { display: flex; margin: 0; padding: 0; }
 .nav-item { position: relative; }
 .nav-item > a { display: block; font-family: 'Noto Sans KR', sans-serif; font-size: 15px; font-weight: 500; color: var(--text); padding: 10px 18px; border-radius: 40px; transition: all 0.2s; border: 1px solid transparent; letter-spacing: 0.02em; white-space: nowrap; }
@@ -82,14 +83,13 @@ input, textarea, select { font-family: inherit; font-size: inherit; outline: non
 .nav-dropdown li a::after { content: '\ea6c'; font-family: 'remixicon'; font-size: 16px; font-weight: 300; color: var(--accent); opacity: 0; transform: translateX(-10px); transition: all 0.3s cubic-bezier(0.2, 1, 0.2, 1); }
 .nav-dropdown li a:hover { color: var(--accent); background: linear-gradient(135deg, rgba(86,180,233,0.08), rgba(86,180,233,0.02)); transform: translateX(8px); padding-left: 24px; }
 .nav-dropdown li a:hover::after { opacity: 1; transform: translateX(0); }
-.header-cta-wrap { position: relative; display: none; }
+.header-cta-wrap { position: relative; display: none; padding-bottom: 12px; margin-bottom: -12px; }
 .header-cta { background: var(--text); color: var(--bg); padding: 10px 24px; font-size: 14px; font-family: 'Outfit', sans-serif; font-weight: 400; border-radius: 50px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
 .header-cta::after { display: none; }
 @media (hover: hover) { .header-cta-wrap:hover .header-cta::after { transform: rotate(180deg); } }
-.header-cta:hover { background: var(--accent); color: #fff; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(86,180,233,0.3); }
-.header-cta-dropdown { position: absolute; top: calc(100% + 8px); right: 0; min-width: 160px; background: rgba(255,255,255,0.85); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid var(--border); border-radius: 16px; padding: 8px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.25s cubic-bezier(0.2, 1, 0.2, 1); box-shadow: 0 12px 32px rgba(0,0,0,0.1); pointer-events: none; z-index: 1001; }
-.header-cta-dropdown::before { content: ''; position: absolute; top: -12px; left: 0; right: 0; height: 12px; }
-@media (hover: hover) { .header-cta-wrap:hover .header-cta-dropdown { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: all; } }
+.header-cta:hover { background: var(--accent); color: #fff; box-shadow: 0 8px 24px rgba(86,180,233,0.3); }
+.header-cta-dropdown { position: fixed; min-width: 160px; background: rgba(255,255,255,0.85); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid var(--border); border-radius: 16px; padding: 8px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 0.25s cubic-bezier(0.2, 1, 0.2, 1), visibility 0.25s, transform 0.25s cubic-bezier(0.2, 1, 0.2, 1); box-shadow: 0 12px 32px rgba(0,0,0,0.1); pointer-events: none; z-index: 1001; }
+.header-cta-dropdown::before { display: none; }
 .header-cta-wrap.open .header-cta-dropdown { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: all; }
 .cta-drop-item { display: flex; align-items: center; gap: 10px; padding: 12px 16px; font-size: 14px; font-weight: 500; font-family: 'Outfit', sans-serif; color: var(--text); border-radius: 10px; transition: all 0.2s cubic-bezier(0.2, 1, 0.2, 1); white-space: nowrap; }
 .cta-drop-item i { font-size: 20px; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); transition: all 0.2s; }
@@ -416,19 +416,22 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
 @media (min-width: 1025px) {
   #main-header, .main-header { top: 12px; padding: 0 40px; overflow: visible; height: auto; }
   #main-header.scrolled, .main-header.scrolled { top: 4px; }
-  .header-inner { 
-    flex-direction: column; 
-    align-items: center; 
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
     position: relative;
-    background: rgba(255, 255, 255, 0.45); 
-    backdrop-filter: blur(32px); 
-    -webkit-backdrop-filter: blur(32px); 
-    border: 1px solid rgba(255, 255, 255, 0.6); 
-    border-radius: 40px; 
+    max-width: 1060px;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 40px;
     padding: 14px 40px 12px;
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.6);
   }
+  .header-nav-row { display: flex; align-items: center; gap: 12px; }
+  .header-logo { text-align: center; }
   .header-logo img { height: 56px; }
   .header-nav { 
     display: flex !important; 
@@ -442,9 +445,9 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
   }
   .nav-list { gap: 16px; }
   .nav-item a { padding: 12px 24px; font-size: 16px; letter-spacing: 0.04em; }
-  .header-cta-wrap { display: inline-flex !important; position: absolute; right: 40px; top: 24px; }
+  .header-cta-wrap { display: inline-flex !important; position: static; flex-shrink: 0; }
   .hamburger { display: none !important; }
-  #hero { padding-top: 160px; }
+  #hero { padding-top: 190px; }
 }
 
 /* ============================================================ RESPONSIVE 1024px ============================================================ */
@@ -456,6 +459,9 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
   .header-inner { z-index: 1003; }
   .header-nav { padding: 4px; }
   .nav-item > a { font-size: 13px; padding: 8px 12px; }
+  .nav-dropdown { min-width: 140px; padding: 8px; border-radius: 14px; left: 50%; transform: translateX(-50%) translateY(10px) scale(0.98); }
+  .nav-item.dropdown-open .nav-dropdown { transform: translateX(-50%) translateY(0) scale(1); }
+  .nav-dropdown li a { padding: 10px 14px; font-size: 13px; }
   .mobile-menu { display: none !important; }
   #hero { padding: 110px 32px 40px; margin-top: 0; min-height: auto; }
   .hero-showcase-inner { min-height: auto; aspect-ratio: 1282/528; padding: 0; flex-direction: column; justify-content: flex-end; align-items: stretch; border-radius: 20px; }
@@ -483,7 +489,9 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
   .header-logo img { height: 44px; }
   .header-nav { padding: 3px; gap: 2px; }
   .nav-item > a { font-size: 12px; padding: 6px 8px; }
-  .nav-dropdown { min-width: 140px; padding: 8px; border-radius: 14px; }
+  .nav-dropdown { min-width: 120px; padding: 6px; border-radius: 12px; left: 50%; transform: translateX(-50%) translateY(10px) scale(0.98); }
+  .nav-item.dropdown-open .nav-dropdown { transform: translateX(-50%) translateY(0) scale(1); }
+  .nav-dropdown li a { padding: 8px 12px; font-size: 12px; }
   .hero-inner { padding: 0 20px; }
 
   /* Trust: 2x2 grid — hide dividers on right-edge (even) items */

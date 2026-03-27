@@ -309,26 +309,49 @@
         }
     }
 
-    // 8b. Header CTA dropdown (tap fallback for mobile)
+    // 8b. Header CTA dropdown
     function initHeaderCTA() {
         const wrap = $('.header-cta-wrap');
         if (!wrap) return;
 
-        const hasHover = window.matchMedia('(hover: hover)').matches;
-        if (!hasHover) {
-            const ctaBtn = wrap.querySelector('.header-cta');
-            if (!ctaBtn) return;
+        const ctaBtn = wrap.querySelector('.header-cta');
+        const dropdown = wrap.querySelector('.header-cta-dropdown');
+        if (!ctaBtn || !dropdown) return;
 
+        function positionDropdown() {
+            const rect = ctaBtn.getBoundingClientRect();
+            dropdown.style.top = (rect.bottom + 4) + 'px';
+            dropdown.style.left = (rect.left + rect.width / 2 - dropdown.offsetWidth / 2 - 180) + 'px';
+        }
+
+        const hasHover = window.matchMedia('(hover: hover)').matches;
+
+        if (hasHover) {
+            wrap.addEventListener('mouseenter', () => {
+                positionDropdown();
+                wrap.classList.add('open');
+            });
+            wrap.addEventListener('mouseleave', () => {
+                wrap.classList.remove('open');
+            });
+            dropdown.addEventListener('mouseenter', () => {
+                wrap.classList.add('open');
+            });
+            dropdown.addEventListener('mouseleave', () => {
+                wrap.classList.remove('open');
+            });
+        } else {
             ctaBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
+                positionDropdown();
                 wrap.classList.toggle('open');
             });
-
-            document.addEventListener('click', (e) => {
-                if (!wrap.contains(e.target)) wrap.classList.remove('open');
-            });
         }
+
+        document.addEventListener('click', (e) => {
+            if (!wrap.contains(e.target) && !dropdown.contains(e.target)) wrap.classList.remove('open');
+        });
     }
 
     // 9. Consultation Form
