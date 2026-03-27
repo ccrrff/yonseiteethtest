@@ -56,31 +56,56 @@
             navItems.forEach(item => item.classList.remove('dropdown-open'));
         }
 
-        const hasHover = window.matchMedia('(hover: hover)').matches;
+        const hoverMql = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+        function attachHoverListeners() {
+            navItems.forEach(item => {
+                const dropdown = item.querySelector('.nav-dropdown');
+                if (!dropdown) return;
+
+                function onEnter() {
+                    if (!hoverMql.matches) return;
+                    if (closeTimeout) { clearTimeout(closeTimeout); closeTimeout = null; }
+                    navItems.forEach(other => { if (other !== item) other.classList.remove('dropdown-open'); });
+                    item.classList.add('dropdown-open');
+                }
+
+                function onLeave() {
+                    if (!hoverMql.matches) return;
+                    closeTimeout = setTimeout(closeAll, 250);
+                }
+
+                item.addEventListener('mouseenter', onEnter);
+                item.addEventListener('mouseleave', onLeave);
+            });
+        }
+
+        attachHoverListeners();
+
+        function positionDropdown(navItem, dropdown) {
+            const rect = navItem.getBoundingClientRect();
+            dropdown.style.top = (rect.bottom + 4) + 'px';
+            dropdown.style.left = (rect.left + rect.width / 2 - dropdown.offsetWidth / 2) + 'px';
+            // 화면 밖으로 나가지 않도록 보정
+            const ddRect = dropdown.getBoundingClientRect();
+            if (ddRect.left < 8) dropdown.style.left = '8px';
+            if (ddRect.right > window.innerWidth - 8) dropdown.style.left = (window.innerWidth - dropdown.offsetWidth - 8) + 'px';
+        }
 
         navItems.forEach(item => {
             const dropdown = item.querySelector('.nav-dropdown');
             if (!dropdown) return;
 
-            if (hasHover) {
-                item.addEventListener('mouseenter', () => {
-                    if (closeTimeout) { clearTimeout(closeTimeout); closeTimeout = null; }
-                    navItems.forEach(other => { if (other !== item) other.classList.remove('dropdown-open'); });
-                    item.classList.add('dropdown-open');
-                });
-
-                item.addEventListener('mouseleave', () => {
-                    closeTimeout = setTimeout(closeAll, 250);
-                });
-            }
-
-            // Click/touch toggle for all devices
+            // Click/touch toggle — always active so touch devices always work
             item.querySelector(':scope > a').addEventListener('click', (e) => {
-                if (!hasHover) {
-                    e.preventDefault();
-                    const isOpen = item.classList.contains('dropdown-open');
-                    closeAll();
-                    if (!isOpen) item.classList.add('dropdown-open');
+                // On true hover+fine-pointer devices, let the link navigate normally
+                if (hoverMql.matches) return;
+                e.preventDefault();
+                const isOpen = item.classList.contains('dropdown-open');
+                closeAll();
+                if (!isOpen) {
+                    item.classList.add('dropdown-open');
+                    positionDropdown(item, dropdown);
                 }
             });
         });

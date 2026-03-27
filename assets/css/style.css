@@ -459,8 +459,8 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
   .header-inner { z-index: 1003; }
   .header-nav { padding: 4px; }
   .nav-item > a { font-size: 13px; padding: 8px 12px; }
-  .nav-dropdown { min-width: 140px; padding: 8px; border-radius: 14px; left: 50%; transform: translateX(-50%) translateY(10px) scale(0.98); }
-  .nav-item.dropdown-open .nav-dropdown { transform: translateX(-50%) translateY(0) scale(1); }
+  .nav-dropdown { position: fixed; min-width: 140px; padding: 8px; border-radius: 14px; left: auto; transform: translateY(-8px); }
+  .nav-item.dropdown-open .nav-dropdown { transform: translateY(0); }
   .nav-dropdown li a { padding: 10px 14px; font-size: 13px; }
   .mobile-menu { display: none !important; }
   #hero { padding: 110px 32px 40px; margin-top: 0; min-height: auto; }
@@ -489,8 +489,7 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
   .header-logo img { height: 44px; }
   .header-nav { padding: 3px; gap: 2px; }
   .nav-item > a { font-size: 12px; padding: 6px 8px; }
-  .nav-dropdown { min-width: 120px; padding: 6px; border-radius: 12px; left: 50%; transform: translateX(-50%) translateY(10px) scale(0.98); }
-  .nav-item.dropdown-open .nav-dropdown { transform: translateX(-50%) translateY(0) scale(1); }
+  .nav-dropdown { min-width: 120px; padding: 6px; border-radius: 12px; }
   .nav-dropdown li a { padding: 8px 12px; font-size: 12px; }
   .hero-inner { padding: 0 20px; }
 
@@ -581,7 +580,7 @@ fieldset.form-radio-group legend { font-family: 'Outfit', sans-serif; font-size:
   .statement-quote { font-size: 120px; }
   #statement, .statement { padding: 16px 0; }
 
-  .nav-dropdown { display: none; }
+  /* nav-dropdown: keep visible for click-toggle; base styles already handle hidden state via opacity/visibility */
   .name-display { font-size: 40px; }
 
   /* Reduce blur for mobile performance */
